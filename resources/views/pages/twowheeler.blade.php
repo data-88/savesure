@@ -18,10 +18,6 @@
             <li>
                 <select name="brand" id="brand" class="field-style field-split align-left" required>
                     <option value="0" disabled="true" selected="true">Select Brand</option>
-                    <!-- ForEach Loop to list brand names -->
-                    @foreach ($brand as $key => $value)
-                        <option value="{{$value->id}}">{{$value->brand_name}}</option>
-                    @endforeach
                 </select>
                 <select name="version" id="ver" class="field-style field-split align-right" required>
                     <option value="0" disabled="true" selected="true">Select Model</option>

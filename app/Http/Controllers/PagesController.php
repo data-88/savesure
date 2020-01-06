@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-use App\Brand;
-use App\Model;
 
 class PagesController extends Controller
 {
@@ -15,8 +13,7 @@ class PagesController extends Controller
     }
     
     public function twowheeler(){
-        $brand = Brand::all();
-        return view('pages.twowheeler', compact('brand'));
+        return view('pages.twowheeler');
     }
     
     public function about(){
