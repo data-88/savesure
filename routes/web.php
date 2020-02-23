@@ -11,14 +11,21 @@
 |
 */
 
-/*--------------------------- 
+/*---------------------------
 Route::get('/', function () {
     return view('welcome');
 });
 ---------------------------*/
 
-Route::get('/','PagesController@index');
+/*Route::get('/','PagesController@index');
 
-Route::get('/twowheeler','PagesController@twowheeler');
+Route::get('/twowheeler','PagesController@twowheeler')->name('two-wheeler');
 
-Route::get('/about','PagesController@about');
+Route::get('/about','PagesController@about');*/
+
+Route::group(['namespace' => 'Frontend'], function(){
+    Route::get('/', 'FrontendController@index');
+    Route::get('/', 'FrontendController@index')->name('index');
+    Route::get('twowheeler', 'FrontendController@twowheeler')->name('two-wheeler');
+    Route::get('about', 'FrontendController@about')->name('about-us');
+});

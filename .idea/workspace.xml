@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e73d8a3b-3a0e-465e-9fc8-16d9ff4631ad" name="Default Changelist" comment="" />
+    <list default="true" id="e73d8a3b-3a0e-465e-9fc8-16d9ff4631ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/database/seeds/VariantSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/master.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/twowheeler.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Insurance-Quote-Comparision" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -107,16 +124,26 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1VcBGEjVKP2Fv2KBm2Q3wnnAQGf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Insurance\app\Http\Controllers\Frontend" />
+      <recent name="C:\xampp\htdocs\Insurance\resources\views\Frontend" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -147,16 +174,52 @@
       <option name="presentableId" value="Default" />
       <updated>1577542404847</updated>
       <workItem from="1577542406530" duration="8967000" />
+      <workItem from="1582469621293" duration="742000" />
+      <workItem from="1582470379937" duration="4865000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Insurance-Quote-Comparision" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
     <state x="432" y="184" key="#Composer" timestamp="1577542474235">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="432" y="184" key="#Composer/0.0.1680.1050@0.0.1680.1050" timestamp="1577542474235" />
+    <state x="852" y="172" key="#Notifications" timestamp="1582472726008">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="852" y="172" key="#Notifications/0.0.1680.1020@0.0.1680.1020" timestamp="1582472726008" />
+    <state x="602" y="313" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582474263217">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="602" y="313" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020@0.0.1680.1020" timestamp="1582474263217" />
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582473142986">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1582473142986" />
+    <state x="332" y="104" key="CommitChangelistDialog2" timestamp="1582472149039">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="332" y="104" key="CommitChangelistDialog2/0.0.1680.1020@0.0.1680.1020" timestamp="1582472149039" />
+    <state x="566" y="476" key="FileChooserDialogImpl" timestamp="1582474925435">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="566" y="476" key="FileChooserDialogImpl/0.0.1680.1020@0.0.1680.1020" timestamp="1582474925435" />
+    <state x="181" y="192" key="SettingsEditor" timestamp="1582475069594">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="181" y="192" key="SettingsEditor/0.0.1680.1020@0.0.1680.1020" timestamp="1582475069594" />
+    <state x="541" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1582470379951">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="541" y="334" key="com.intellij.ide.util.TipDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1582470379951" />
   </component>
 </project>

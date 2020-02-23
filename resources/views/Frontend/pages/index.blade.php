@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Frontend.master')
 
 @section('content')
 <main role="main">
@@ -30,7 +30,7 @@
         <div class="jumbotron" style="background-color:white;">
             <hr>
             <div class="container">
-                <h1 class="display-3" style="text-align: center;">Why choose us!</h1>
+                <h1 class="display-3" style="text-align: center;">Why choose us?</h1>
                 <div class="row">
                     <div class="col-md-4">
                         <h2>Save Time!</h2>
