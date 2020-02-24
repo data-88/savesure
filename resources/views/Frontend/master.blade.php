@@ -1,3 +1,4 @@
+{{--This is the master layout for Frontend--}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 

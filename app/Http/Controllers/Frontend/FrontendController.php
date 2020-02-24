@@ -30,6 +30,7 @@ class FrontendController extends Controller
     public function getVariants(Request $request){
         $variants = Variant::where('type_id',$request->type_id)->pluck('name','id');
         return response()->json($variants);
+
     }
 
     public function about(){

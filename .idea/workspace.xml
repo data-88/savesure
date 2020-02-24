@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e73d8a3b-3a0e-465e-9fc8-16d9ff4631ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BackendController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/brand/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/brand/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/brand/update.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BrandsController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_06_091400_create_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_06_091400_create_types_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/BrandSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/BrandSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,10 +130,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Backend/pages/brand" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\pages\brand" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Insurance\app\Http\Controllers\Frontend" />
       <recent name="C:\xampp\htdocs\Insurance\resources\views\Frontend" />
@@ -166,7 +173,7 @@
       <workItem from="1577542406530" duration="8967000" />
       <workItem from="1582469621293" duration="742000" />
       <workItem from="1582470379937" duration="20334000" />
-      <workItem from="1582546170901" duration="2459000" />
+      <workItem from="1582546170901" duration="7547000" />
     </task>
     <servers />
   </component>
@@ -188,10 +195,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="852" y="172" key="#Notifications/0.0.1680.1020@0.0.1680.1020" timestamp="1582472726008" />
-    <state x="602" y="313" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582474263217">
+    <state x="602" y="313" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582553572726">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="602" y="313" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020@0.0.1680.1020" timestamp="1582474263217" />
+    <state x="602" y="313" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020@0.0.1680.1020" timestamp="1582553572726" />
     <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582473142986">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
@@ -212,9 +219,9 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="541" y="334" key="com.intellij.ide.util.TipDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1582546354074" />
-    <state x="923" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582546862364">
+    <state x="923" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582555729118">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="923" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1680.1020@0.0.1680.1020" timestamp="1582546862364" />
+    <state x="923" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1680.1020@0.0.1680.1020" timestamp="1582555729118" />
   </component>
 </project>
