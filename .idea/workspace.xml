@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e73d8a3b-3a0e-465e-9fc8-16d9ff4631ad" name="Default Changelist" comment="" />
+    <list default="true" id="e73d8a3b-3a0e-465e-9fc8-16d9ff4631ad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BrandsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_06_091400_create_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_06_091400_create_types_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,7 +165,8 @@
       <updated>1577542404847</updated>
       <workItem from="1577542406530" duration="8967000" />
       <workItem from="1582469621293" duration="742000" />
-      <workItem from="1582470379937" duration="5449000" />
+      <workItem from="1582470379937" duration="20334000" />
+      <workItem from="1582546170901" duration="2459000" />
     </task>
     <servers />
   </component>
@@ -200,9 +208,13 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="181" y="192" key="SettingsEditor/0.0.1680.1020@0.0.1680.1020" timestamp="1582476372258" />
-    <state x="541" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1582470379951">
+    <state x="541" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1582546354074">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="541" y="334" key="com.intellij.ide.util.TipDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1582470379951" />
+    <state x="541" y="334" key="com.intellij.ide.util.TipDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1582546354074" />
+    <state x="923" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582546862364">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="923" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1680.1020@0.0.1680.1020" timestamp="1582546862364" />
   </component>
 </project>

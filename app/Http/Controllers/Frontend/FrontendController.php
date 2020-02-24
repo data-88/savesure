@@ -6,6 +6,7 @@ use App\Brand;
 use App\Http\Controllers\Controller;
 use App\Type;
 use App\Variant;
+use DB;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -17,10 +18,18 @@ class FrontendController extends Controller
     }
 
     public function twowheeler(){
-        $brands=Brand::get();
-        $types=Type::get();
-        $variants=Variant::get();
-        return view($this->pages. 'twowheeler')->with(['brand'=>$brands])->with(['type'=>$types])->with(['variant'=>$variants]);
+        $brands = Brand::all()->pluck('name','id');
+        return view($this->pages. 'twowheeler',compact('brands'));
+    }
+
+    public function getTypes(Request $request){
+        $types = Type::where('brand_id',$request->brand_id)->pluck('name','id');
+        return response()->json($types);
+    }
+
+    public function getVariants(Request $request){
+        $variants = Variant::where('type_id',$request->type_id)->pluck('name','id');
+        return response()->json($variants);
     }
 
     public function about(){

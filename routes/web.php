@@ -27,5 +27,7 @@ Route::group(['namespace' => 'Frontend'], function(){
     Route::get('/', 'FrontendController@index');
     Route::get('/', 'FrontendController@index')->name('index');
     Route::get('twowheeler', 'FrontendController@twowheeler')->name('two-wheeler');
+    Route::get('getTypes','FrontendController@getTypes');
+    Route::get('getVariants','FrontendController@getVariants');
     Route::get('about', 'FrontendController@about')->name('about-us');
 });
