@@ -18,8 +18,12 @@ class FrontendController extends Controller
     }
 
     public function twowheeler(){
-        $brands = Brand::all()->pluck('name','id');
+        $brands = Brand::where('category_id',1)->pluck('name','id');
         return view($this->pages. 'twowheeler',compact('brands'));
+    }
+    public function car(){
+        $brands = Brand::where('category_id',2)->pluck('name','id');
+        return view($this->pages. 'car',compact('brands'));
     }
 
     public function getTypes(Request $request){
@@ -35,5 +39,13 @@ class FrontendController extends Controller
 
     public function about(){
         return view($this->pages. 'about');
+    }
+
+    public function contact(){
+        return view($this->pages. 'contact');
+    }
+
+    public function preview(){
+        return view($this->pages. 'preview');
     }
 }

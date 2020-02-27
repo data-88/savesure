@@ -12,7 +12,7 @@ class TypeSeeder extends Seeder
     public function run()
     {
 
-
+        /*Bike Models*/
         DB::table('types')->insert([
             'brand_id'=>'1',
             'name' => 'Pulsar'
@@ -30,6 +30,15 @@ class TypeSeeder extends Seeder
         DB::table('types')->insert([
             'brand_id'=>'2',
             'name' => 'FZS Fi'
+        ]);
+
+        /*Car Models*/
+        DB::table('types')->insert([
+            'brand_id'=>'3',
+            'name' => 'Hyundai Creta'
+        ]);DB::table('types')->insert([
+            'brand_id'=>'3',
+            'name' => 'Hyundai i20'
         ]);
     }
 }

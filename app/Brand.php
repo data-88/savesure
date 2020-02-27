@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Brand extends Model
 {
@@ -14,9 +15,9 @@ class Brand extends Model
       * @var array
       */
     protected $fillable  = [
-      'name'
+      'name','category_id'
     ];
-    
+
     /**
      * Get the models of the brand.
      *
@@ -24,6 +25,7 @@ class Brand extends Model
      */
     public function types()
     {
+        return $this->belongsTo(Category::class);
         return $this->hasMany(Type::class);
     }
 }

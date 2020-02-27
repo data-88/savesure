@@ -17,16 +17,26 @@ class BrandSeeder extends Seeder
         //     ]);
         // });
 
+        /*Bike Brands*/
         DB::table('brands')->insert([
+            'category_id' => '1',
             'name' => 'Bajaj'
         ]);
 
         DB::table('brands')->insert([
+            'category_id' => '1',
             'name' => 'Yamaha'
         ]);
 
+        /*Car Brands*/
         DB::table('brands')->insert([
-            'name' => 'Honda'
+            'category_id' => '2',
+            'name' => 'Hyundai'
+        ]);
+
+        DB::table('brands')->insert([
+            'category_id' => '2',
+            'name' => 'Maruti'
         ]);
 
     }
