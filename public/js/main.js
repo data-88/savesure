@@ -137,11 +137,11 @@ if(testmonial.length){
     $(this).addClass('active');
     event.preventDefault();
 	});
-  
+
   // wow js
   new WOW().init();
 
-  // counter 
+  // counter
   $('.counter').counterUp({
     delay: 10,
     time: 10000
@@ -235,6 +235,10 @@ dots:false,
 
 });
 
+
+
+
+
 // resitration_Form
 $(document).ready(function() {
 	$('.popup-with-form').magnificPopup({
@@ -258,7 +262,7 @@ $(document).ready(function() {
 
 
 
-//------- Mailchimp js --------//  
+//------- Mailchimp js --------//
 function mailChimp() {
   $('#mc_embed_signup').find('form').ajaxChimp();
 }
@@ -285,8 +289,8 @@ mailChimp();
           $('select').niceSelect();
         });
 
-        // prise slider 
-        
+        // prise slider
+
 
         $('#datepicker').datepicker({
           iconsLibrary: 'fontawesome',
@@ -299,4 +303,4 @@ mailChimp();
 
 
 
-})(jQuery);	
+})(jQuery);

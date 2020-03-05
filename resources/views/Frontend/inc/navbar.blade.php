@@ -29,9 +29,9 @@
             <div class="header_bottom_border">
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-2">
-                        <div class="logo">
+                        <div >
                             <a href="/">
-                                <img src="img/logo.png" alt="">
+                                <img src="{{asset('img/header_logo.png')}}" alt="">
                             </a>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                         <div class="Appointment">
                             <div class="phone_num d-none d-xl-block">
-                                <a href="#"> <i class="fa fa-phone"></i> +10 673 567 367</a>
+                                <a href="#"> <i class="fa fa-phone"></i> +977 01-333333</a>
                             </div>
                         </div>
                     </div>

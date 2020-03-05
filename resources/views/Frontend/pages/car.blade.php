@@ -16,6 +16,7 @@
     <!--/ bradcam_area  -->
     <!-- apply_form_area -->
     <div class="apply_form_area">
+        @csrf
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">

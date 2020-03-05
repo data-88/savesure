@@ -1,82 +1,3 @@
-{{--
-<!-- Footer -->
-<footer class="page-footer font-small stylish-color-dark pt-4">
-
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left">
-
-        <!-- Grid row -->
-        <div class="row">
-
-            <!-- Grid column -->
-            <div class="col-md-4 mx-auto">
-
-                <!-- Content -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Quotes Comparision</h5>
-                <p>Compare Premiums of different insurance companies with ease. We list all the Automobile Insurance providers in Nepal with their Premiums.</p>
-
-            </div>
-            <!-- Grid column -->
-
-            <hr class="clearfix w-100 d-md-none">
-
-            <!-- Grid column -->
-            <div class="col-md-2 mx-auto">
-
-                <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Insurance</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="/twowheeler">Two-Wheelers Insurance</a>
-                    </li>
-                    <li>
-                        <a href="#">Cars Insurance</a>
-                    </li>
-                    <li>
-                        <a href="#">Commercial Vehicle Insurance</a>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- Grid column -->
-
-            <hr class="clearfix w-100 d-md-none">
-
-        </div>
-        <!-- Grid row -->
-
-    </div>
-    <!-- Footer Links -->
-
-    <hr>
-
-    <!-- Social buttons -->
-    <ul class="list-unstyled list-inline text-center">
-        <li class="list-inline-item">
-            <a class="btn-floating btn-fb mx-1" href="#">
-                <i class="fa fa-facebook-f"> </i>
-            </a>
-        </li>
-        <li class="list-inline-item">
-            <a class="btn-floating btn-tw mx-1" href="#">
-                <i class="fa fa-twitter"> </i>
-            </a>
-        </li>
-        <li class="list-inline-item">
-            <a class="btn-floating btn-li mx-1" href="#">
-                <i class="fa fa-instagram"> </i>
-            </a>
-        </li>
-
-        <!-- Copyright -->
-        <li class="list-inline-item">
-           <p>© 2019 Copyright: Rijan Kayastha</p>
-        </li>
-    </ul>
-    <!-- Social buttons -->
-</footer>--}}
-
 <!-- footer start -->
 <footer class="footer">
     <div class="footer_top">
@@ -86,19 +7,19 @@
                     <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
                         <div class="footer_logo">
                             <a href="#">
-                                <img src="img/footer_logo.png" alt="">
+                                <img src="{{ asset('img/footers_logo.png') }}" alt="">
                             </a>
                         </div>
                         <p>
-                            finloan@support.com <br>
-                            +10 873 672 6782 <br>
-                            600/D, Green road, NewYork
+                            quotes@support.com <br>
+                            +977 01-333333 <br>
+                            Bhaktapur, Nepal
                         </p>
                         <div class="socail_links">
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <i class="ti-facebook"></i>
+                                        <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
@@ -167,9 +88,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <p class="copy_right text-center">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Rijan Kayastha
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved
                     </p>
                 </div>
             </div>
@@ -178,33 +98,127 @@
 </footer>
 <!--/ footer end  -->
 
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 <!-- JS -->
-{{--<script src="js/vendor/modernizr-3.5.0.min.js"></script>--}}
-{{--<script src="js/owl.carousel.min.js"></script>--}}
 <script src="js/isotope.pkgd.min.js"></script>
-{{--<script src="js/waypoints.min.js"></script>--}}
 <script src="js/imagesloaded.pkgd.min.js"></script>
-{{--<script src="js/scrollIt.js"></script>--}}
-{{--<script src="js/jquery.scrollUp.min.js"></script>--}}
 <script src="js/wow.min.js"></script>
-
-{{--<script src="js/nice-select.min.js"></script>--}}
-
+<script src="js/nice-select.min.js"></script>
 <script src="js/jquery.slicknav.min.js"></script>
-{{--<script src="js/jquery.magnific-popup.min.js"></script>--}}
-{{--<script src="js/plugins.js"></script>--}}
-{{--<script src="js/gijgo.min.js"></script>--}}
-{{--<script src="js/slick.min.js"></script>--}}
-
-<!--contact js-->
-{{--<script src="js/contact.js"></script>--}}
-{{--<script src="js/jquery.ajaxchimp.min.js"></script>--}}
-{{--<script src="js/jquery.form.js"></script>--}}
-{{--<script src="js/jquery.validate.min.js"></script>--}}
-{{--<script src="js/mail-script.js"></script>--}}
-
 
 <script src="js/main.js"></script>
+
+<script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+{{--Javascript with ajax for dynamic dropdown brand-type--}}
+<script type="text/javascript">
+    $('#brand').change(function () {
+        var brandID = $(this).val();
+        if (brandID) {
+            $.ajax({
+                type: 'GET',
+                url: '{{url('getTypes')}}?brand_id=' + brandID,
+                success: function (res) {
+                    if (res) {
+                        $('#type').empty();
+                        $('#type').append('<option>Select Model</option>');
+                        $.each(res, function (key, value) {
+                            $('#type').append('<option value="' + key + '">' + value + '</option>');
+                        });
+                    } else {
+                        $('#type').empty();
+                    }
+                }
+
+            });
+        } else {
+            $('#type').empty();
+            $('#variant').empty();
+        }
+    });
+
+    {{--Javascript with ajax for dynamic dropdown type-variants--}}
+    $('#type').on('change', function () {
+        var typeID = $(this).val();
+        if (typeID) {
+            $.ajax({
+                type: 'GET',
+                url: '{{url('getVariants')}}?type_id=' + typeID,
+                success: function (res) {
+                    if (res) {
+                        $('#variant').empty();
+                        $('#variant').append('<option>Select Variant</option>');
+                        $.each(res, function (key, value) {
+                            $('#variant').append('<option value="' + key + '">' + value + '</option>');
+                        });
+                    } else {
+                        $('#variant').empty();
+                    }
+                }
+            });
+        } else {
+            $('#variant').empty();
+        }
+    });
+</script>
+
+{{--Preview page idv slider and checkbox script--}}
+<script>
+    // $('#policy_type').text('Third Party');
+
+    $(document).ready(function () {
+        $('#thirdparty').prop('checked', true);
+        $('#thirdparty').click(function () {
+            $('#thirdparty').prop('checked', true);
+            alert('Third Party Coverage is the minimum. Thus, this cannot be unchecked.');
+        });
+
+        //Checkbox check and uncheck
+
+        /*$('#comprehensive').click(function () {
+            //if checked.
+            if ($(this).prop('checked')) {
+                $('#policy_type').append(', Comprehensive');
+            } else {
+                $('#policy_type').text('Third Party');
+            }
+        });*/
+    });
+    $(document).ready(function(){
+        $('#comprehensive').change(function(){
+            if(this.checked)
+                $('#slider').fadeIn('slow');
+            else
+                $('#slider').fadeOut('slow');
+
+        });
+    });
+</script>
+<script>
+    $( function() {
+        $( "#slider" ).slider({
+            value:50000,
+            min: 50000,
+            max: 1000000,
+            step: 1000,
+            slide: function( event, ui ) {
+                $( "#amount" ).val( "RS." + ui.value );
+            }
+        });
+        $( "#amount" ).val( "RS." + $( "#slider" ).slider( "value" ) );
+    } );
+</script>
 
 
 

@@ -17,21 +17,20 @@ Route::get('/', function () {
 });
 ---------------------------*/
 
-/*Route::get('/','PagesController@index');
-
-Route::get('/twowheeler','PagesController@twowheeler')->name('two-wheeler');
-
-Route::get('/about','PagesController@about');*/
-
 Route::group(['namespace' => 'Frontend'], function(){
-    Route::get('/', 'FrontendController@index');
+    //Pages
     Route::get('/', 'FrontendController@index')->name('index');
     Route::get('twowheeler', 'FrontendController@twowheeler')->name('two-wheeler');
     Route::get('car','FrontendController@car')->name('car');
-    Route::get('getTypes','FrontendController@getTypes');
-    Route::get('getVariants','FrontendController@getVariants');
     Route::get('about', 'FrontendController@about')->name('about-us');
     Route::get('contact', 'FrontendController@contact')->name('contact-us');
-    Route::get('preview', 'FrontendController@preview')->name('company-list');
+    Route::get('preview/{id}', 'FrontendController@preview')->name('company-list');
 
+    Route::get('getTypes','FrontendController@getTypes');
+    Route::get('getVariants','FrontendController@getVariants');
+
+    //Store Form Data Twowheeler
+    Route::get('create','FrontendController@create');
+    Route::post('create','FrontendController@storeBike');
 });
+
