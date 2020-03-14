@@ -53,20 +53,6 @@ class FrontendController extends Controller
 
     public function storeBike(Request $request)
     {
-
-//        $detail = new Detail();
-//
-//        $detail->name = request('name');
-//        $detail->email = request('email');
-//        $detail->phone = request('phone');
-//        $detail->brand_id = request('brand');
-//        $detail->type_id = request('type');
-//        $detail->variant_id = request('variant');
-//        $detail->date = request('date');
-//        $detail->status = request('status');
-//
-//        $detail->save();
-
         // Storing user vehicle details into a database
         $data = new Detail(
             [

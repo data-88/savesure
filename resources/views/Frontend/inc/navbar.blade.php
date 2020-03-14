@@ -35,7 +35,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-7">
+                    <div class="col-xl-5 col-lg-6">
                         <div class="main-menu  d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
@@ -48,11 +48,17 @@
                             </nav>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                    <div class="col-xl-4 col-lg-4 d-none d-lg-block">
                         <div class="Appointment">
                             <div class="phone_num d-none d-xl-block">
                                 <a href="#"> <i class="fa fa-phone"></i> +977 01-333333</a>
                             </div>
+                            {{--<div class="d-none d-lg-block">
+                                <a class="boxed-btn4" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </div>
+                            <div class="d-none d-lg-block">
+                                <a class="boxed-btn4" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </div>--}}
                         </div>
                     </div>
                     <div class="col-12">

@@ -183,41 +183,60 @@
             $('#thirdparty').prop('checked', true);
             alert('Third Party Coverage is the minimum. Thus, this cannot be unchecked.');
         });
-
-        //Checkbox check and uncheck
-
-        /*$('#comprehensive').click(function () {
-            //if checked.
-            if ($(this).prop('checked')) {
-                $('#policy_type').append(', Comprehensive');
-            } else {
-                $('#policy_type').text('Third Party');
-            }
-        });*/
     });
-    $(document).ready(function(){
-        $('#comprehensive').change(function(){
-            if(this.checked)
-                $('#slider').fadeIn('slow');
-            else
-                $('#slider').fadeOut('slow');
 
-        });
-    });
+    //Checkbox check and uncheck
+
+    /*$('#comprehensive').click(function () {
+        //if checked.
+        if ($(this).prop('checked')) {
+            $('#policy_type').append(', Comprehensive');
+        } else {
+            $('#policy_type').text('Third Party');
+        }
+    });*/
+
+
 </script>
+
+
 <script>
-    $( function() {
-        $( "#slider" ).slider({
-            value:50000,
-            min: 50000,
-            max: 1000000,
-            step: 1000,
-            slide: function( event, ui ) {
-                $( "#amount" ).val( "RS." + ui.value );
+    $(function () {
+        $('#comprehensive').click(function () {
+            if ($(this).is(":checked")) {
+                //Display IDV slider div
+                $("#slider").show();
+                // Initializing slider
+                $("#slider").slider({
+                    value: 50000,
+                    min: 50000,
+                    max: 1000000,
+                    step: 1000,
+                    slide: function (event, ui) {
+                        //Value changes according to the slider
+                        $("#amount").val("IDV : " + "RS." + ui.value);
+                        //Get Value
+                        var idv = ui.value;
+                        var prem = $("#ccPrem").text();
+                        var basePrem = 1000;
+                        if (idv >= 67000) {
+                            for(let i =68000; i == 1000000; i += 1000){
+                                basePrem = 1005;
+                                basePrem += 15;
+                            }
+                        }
+                        console.log(basePrem);
+                    }
+                });
+                //Initial Value Display
+                $("#amount").val("IDV : " + "RS." + $("#slider").slider("value"));
+            }
+            else {
+                //Hide IDV slider div
+                $("#slider").hide();
             }
         });
-        $( "#amount" ).val( "RS." + $( "#slider" ).slider( "value" ) );
-    } );
+    });
 </script>
 
 

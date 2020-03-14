@@ -31,6 +31,21 @@ Route::group(['namespace' => 'Frontend'], function(){
 
     //Store Form Data Twowheeler
     Route::get('create','FrontendController@create');
-    Route::post('create','FrontendController@storeBike');
+    Route::post('create','FrontendController@storebike');
 });
 
+Route::group(['namespace' => 'Backend'], function () {
+    Route::get('adminPanel', 'BackendController@index')->name('dashboard');
+
+    /*Brands Page*/
+    Route::get('adminPanel/brand', 'BrandsController@index')->name('brands');
+    Route::get('adminPanel/brand/add', 'BrandsController@create')->name('add-brands');
+    Route::post('adminPanel/brand/store', 'BrandsController@store')->name('store-brands');
+    Route::get('adminPanel/brand/update/{id}', 'BrandsController@edit')->name('edit-brands');
+    Route::post('adminPanel/brand/update/{id}', 'BrandsController@update')->name('update-brands');
+    Route::post('adminPanel/brand/delete/{id}', 'BrandsController@destroy')->name('delete-brands');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
