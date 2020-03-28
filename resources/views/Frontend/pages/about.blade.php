@@ -13,15 +13,27 @@
             </div>
         </div>
     </div>
-    <!--/ bradcam_area  -->
-    <div class="works_area">
+    <div class="works_area" style="padding: 50px">
         <div class="container">
             <div class="row">
+                <div class="col col-md-12">
+                    <div class="section_title text-center mb-90">
+                        <span class="wow lightSpeedIn" data-wow-duration="1s" data-wow-delay=".1s"></span>
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Welcome to Automoblie
+                            Premium Comparision</h3>
+                    </div>
+                    <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                        <p>
+                            {!! $abouts->about_text !!}
+                        </p>
+                    </div>
+                </div>
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-90">
                         <span class="wow lightSpeedIn" data-wow-duration="1s" data-wow-delay=".1s"></span>
                         <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">How it Works</h3>
-                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">We provide online instant quote comparision that suit your term</p>
+                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">We provide online instant
+                            quote comparision that suit your term</p>
                     </div>
                 </div>
             </div>

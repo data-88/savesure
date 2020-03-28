@@ -100,36 +100,38 @@
 
 
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{{ URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js') }}"></script>
 
 <!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')}}"></script>
 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="{{ URL::asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')}}"></script>
 
 <!-- JS -->
-<script src="js/isotope.pkgd.min.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/nice-select.min.js"></script>
-<script src="js/jquery.slicknav.min.js"></script>
+<script src="{{ URL::asset('js/isotope.pkgd.min.js') }}"></script>
+<script src="{{ URL::asset('js/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ URL::asset('js/wow.min.js') }}"></script>
+<script src="{{ URL::asset('js/nice-select.min.js') }}"></script>
+<script src="{{ URL::asset('js/jquery.slicknav.min.js') }}"></script>
 
-<script src="js/main.js"></script>
+<script src="{{ URL::asset('js/main.js') }}"></script>
 
-<script src="http://code.jquery.com/jquery-2.1.3.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="{{ URL::asset('http://code.jquery.com/jquery-2.1.3.js') }}"></script>
+<script src="{{ URL::asset('https://code.jquery.com/ui/1.12.1/jquery-ui.js') }}"></script>
 
 
 {{--Javascript with ajax for dynamic dropdown brand-type--}}
 <script type="text/javascript">
     $('#brand').change(function () {
         var brandID = $(this).val();
+        console.log(brandID);
         if (brandID) {
             $.ajax({
                 type: 'GET',
                 url: '{{url('getTypes')}}?brand_id=' + brandID,
                 success: function (res) {
+                    console.log(res)
                     if (res) {
                         $('#type').empty();
                         $('#type').append('<option>Select Model</option>');
@@ -156,6 +158,7 @@
                 type: 'GET',
                 url: '{{url('getVariants')}}?type_id=' + typeID,
                 success: function (res) {
+                    console.log(res);
                     if (res) {
                         $('#variant').empty();
                         $('#variant').append('<option>Select Variant</option>');
@@ -220,6 +223,7 @@
                         var prem = $("#ccPrem").text();
                         var basePrem = 1000;
                         if (idv >= 67000) {
+                            basePrem = 1005
                             for(let i =68000; i == 1000000; i += 1000){
                                 basePrem = 1005;
                                 basePrem += 15;

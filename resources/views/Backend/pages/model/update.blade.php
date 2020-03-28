@@ -6,25 +6,15 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Add Bike Brand</h1>
+                    <h1>Edit Model</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{route('brands')}}">Brands</a></li>
-                        <li class="breadcrumb-item active">Add Brands</li>
+                        <li class="breadcrumb-item"><a href="{{route('model')}}">Brands</a></li>
+                        <li class="breadcrumb-item active">Edit Model</li>
                     </ol>
                 </div>
-                @if(session()->has('success'))
-                    <div class="alert alert-success text-center displayMessage" style="margin-top: 10px">
-                        {{ session()->get('success') }}
-                    </div>
-                @endif
-                @if(session()->has('error'))
-                    <div class="alert alert-danger text-center displayMessage" style="margin-top: 10px">
-                        {{ session()->get('error') }}
-                    </div>
-                @endif
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -32,25 +22,34 @@
     <!-- Main content -->
     <section class="content">
         <div class="row justify-content-center">
+            {{--@if($errors->any())
+                <div class="alert alert-danger">
+                    @foreach($errors->all()as $error)
+                        <li>{{ $error  }}</li>
+                    @endforeach
+                </div>
+            @endif--}}
             <div class="col-md-6">
-                <form action="{{route('store-brands')}}" method="post">
-                    {{csrf_field()}}
+                <form action="{{route('update-model',['id'=>$model->id])}}" method="post">
+                    @csrf
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Bike Brand</h3>
+                            <h3 class="card-title">Bike Model Detail</h3>
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="inputName">Brand Name</label>
-                                <input type="text" name="name" id="inputName" class="form-control" placeholder="Name">
+                                <label for="inputName">Model Name</label>
+                                <input type="text" name="name" id="inputName" class="form-control"
+                                       value="{{$model->name}}">
                             </div>
                         </div>
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
-                    <a href="{{route('brands')}}" class="btn btn-secondary">Cancel</a>
+                    <a href="{{route('model')}}" class="btn btn-secondary">Cancel</a>
                     <input type="submit" value="Save Changes" class="btn btn-success">
                 </form>
+
             </div>
         </div>
     </section>

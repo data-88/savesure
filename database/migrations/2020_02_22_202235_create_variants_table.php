@@ -15,6 +15,8 @@ class CreateVariantsTable extends Migration
     {
         Schema::create('variants', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('brand_id');
             $table->unsignedBigInteger('type_id');
             $table->string('name');
             $table->integer('vehicle_cc');

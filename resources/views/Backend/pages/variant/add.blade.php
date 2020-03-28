@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Add Bike Brand</h1>
+                    <h1>Add Bike Model</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{route('brands')}}">Brands</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('model')}}">Models</a></li>
                         <li class="breadcrumb-item active">Add Brands</li>
                     </ol>
                 </div>
@@ -33,22 +33,30 @@
     <section class="content">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form action="{{route('store-brands')}}" method="post">
+                <form action="{{route('store-model')}}" method="post">
                     {{csrf_field()}}
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Bike Brand</h3>
+                            <h3 class="card-title">Bike Model Description</h3>
                         </div>
                         <div class="card-body">
+                            <div>
+                                <select name="bikeBrand" id="addModelBrand" class="form-control">
+                                    <option value="" selected="true" disabled>Select Brand</option>
+                                    @foreach($brands as  $key => $value)
+                                        <option value="{{ $key }}">{{$value}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="form-group">
-                                <label for="inputName">Brand Name</label>
+                                <label for="inputName">Model Name</label>
                                 <input type="text" name="name" id="inputName" class="form-control" placeholder="Name">
                             </div>
                         </div>
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
-                    <a href="{{route('brands')}}" class="btn btn-secondary">Cancel</a>
+                    <a href="{{route('model')}}" class="btn btn-secondary">Cancel</a>
                     <input type="submit" value="Save Changes" class="btn btn-success">
                 </form>
             </div>

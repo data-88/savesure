@@ -14,30 +14,37 @@ class TypeSeeder extends Seeder
 
         /*Bike Models*/
         DB::table('types')->insert([
-            'brand_id'=>'1',
+            'category_id' => '1',
+            'brand_id' => '1',
             'name' => 'Pulsar'
         ]);
 
         DB::table('types')->insert([
-            'brand_id'=>'1',
+            'category_id' => '1',
+            'brand_id' => '1',
             'name' => 'Avenger'
         ]);
 
         DB::table('types')->insert([
-            'brand_id'=>'2',
+            'category_id' => '1',
+            'brand_id' => '2',
             'name' => 'FZ'
         ]);
         DB::table('types')->insert([
-            'brand_id'=>'2',
+            'category_id' => '1',
+            'brand_id' => '2',
             'name' => 'FZS Fi'
         ]);
 
         /*Car Models*/
         DB::table('types')->insert([
-            'brand_id'=>'3',
+            'category_id' => '2',
+            'brand_id' => '3',
             'name' => 'Hyundai Creta'
-        ]);DB::table('types')->insert([
-            'brand_id'=>'3',
+        ]);
+        DB::table('types')->insert([
+            'category_id' => '2',
+            'brand_id' => '3',
             'name' => 'Hyundai i20'
         ]);
     }

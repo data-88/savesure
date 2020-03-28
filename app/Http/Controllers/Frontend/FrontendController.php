@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\About;
 use App\Brand;
 use App\Http\Controllers\Controller;
 use App\Type;
 use App\Variant;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Detail;
 use App\Premium;
@@ -78,7 +79,8 @@ class FrontendController extends Controller
 
     public function about()
     {
-        return view($this->pages . 'about');
+        $about = About::first();
+        return view($this->pages . 'about')->with(['abouts' => $about]);
     }
 
     public function contact()

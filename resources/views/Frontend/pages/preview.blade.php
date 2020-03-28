@@ -66,7 +66,7 @@
             <div class="col col-lg-10 col-md-9 col-sm-12">
                 <div class="row">
                     @foreach ($company as $company)
-                        <div class="col col-md-4 col-sm-6 col-xs-12" style="text-align: center">
+                        <div class="col col-md-4 col-sm-6 col-xs-12" style="text-align: center; padding-bottom: 10px">
                             <div class="card">
                                 <div class="card-body">
                                     <img class="" style="width: 75px; height: 75px;"
