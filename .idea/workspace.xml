@@ -2,36 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e73d8a3b-3a0e-465e-9fc8-16d9ff4631ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BikeVariantController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CarModelController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CarVariantController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/variant/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/variant/update.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/brand/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/brand/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/brand/update.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/model/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/model/update.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/variant/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/variant/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/variant/update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/BackendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BackendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/BrandsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BikeBrandsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ModelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BikeModelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/VariantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CarBrandsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/inc/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/inc/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/inc/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/brand/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/brand/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/brand/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/model/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/model/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/model/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/model/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/model/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/model/update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/variant/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/model/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/variant/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/variant/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/variant/update.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/about/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/about/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/bike/model/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/model/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/bike/variant/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/variant/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/car/brand/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/brand/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/car/model/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/model/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/car/variant/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/variant/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/company/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/company/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,16 +153,16 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/views/Frontend/pages/preview.blade.php" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\pages\car" />
+      <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\pages\brand" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\pages\bike" />
       <recent name="C:\xampp\htdocs\Insurance\app\Http\Controllers\Backend" />
       <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\inc" />
       <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend" />
       <recent name="C:\xampp\htdocs\Insurance\app\Http\Controllers\Frontend" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\pages\car" />
-      <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\pages\brand" />
     </key>
   </component>
   <component name="RunManager">
@@ -249,7 +231,7 @@
       <workItem from="1585226605369" duration="8453000" />
       <workItem from="1585279366363" duration="2153000" />
       <workItem from="1585426791365" duration="15215000" />
-      <workItem from="1585571941772" duration="1078000" />
+      <workItem from="1585571941772" duration="5479000" />
     </task>
     <servers />
   </component>
@@ -333,11 +315,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1584042617320" />
-    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup" timestamp="1585498344476">
+    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup" timestamp="1585575599922">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="844" y="184" width="672" height="555" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1583957025754" />
-    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1585498344476" />
+    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1585575599922" />
     <state x="923" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1680.1020@0.0.1680.1020" timestamp="1585291657190" />
     <state x="1055" y="229" width="768" height="692" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585430702104" />
     <state x="1055" y="232" width="768" height="698" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1585083692900" />

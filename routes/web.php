@@ -34,7 +34,7 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::post('create', 'FrontendController@storebike');
 });
 
-Route::group(['namespace' => 'Backend'], function () {
+Route::group(['namespace' => 'Backend','middleware' => 'auth'], function () {
     Route::get('adminPanel', 'BackendController@index')->name('dashboard');
 
     /*About Page*/
@@ -117,4 +117,4 @@ Route::group(['namespace' => 'Backend'], function () {
 
 Auth::routes();
 
-Route::get('/adminPanel', 'Backend\BackendController@index')->name('home');
+Route::get('/home', 'Backend\BackendController@index')->name('home');

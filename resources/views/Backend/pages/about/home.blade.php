@@ -22,6 +22,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
+                <!-- php to add about details if there is no any about details in the database -->
                 <?php
                 if(count($abouts) <= 0){ ?>
                 <a href="{{ route('add-about') }}" class="btn btn-success text-uppercase">add about</a>

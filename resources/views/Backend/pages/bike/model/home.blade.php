@@ -47,20 +47,20 @@
                     <thead>
                     <tr>
                         <th style="width: 2%">#</th>
-                        <th>Model Name</th>
                         <th>Brand Name</th>
+                        <th>Model Name</th>
                         <th style="width: 15%; text-align: center" colspan="2"> Action</th>
                     </tr>
                     </thead>
                     <tbody id="brand_data">
-                        @foreach($data as $key => $valTypes)
-                            <tr>
+                    @foreach($data as $key => $valTypes)
+                        <tr>
                             <td>{{++$key}}</td>
                             <td>
-                                <a>{{$valTypes->name}}</a>
+                                <a>{{$valTypes->brand_name}}</a>
                             </td>
                             <td>
-                                <a>{{$valTypes->brand_name}}</a>
+                                <a>{{$valTypes->name}}</a>
                             </td>
                             <td class="project-actions text-right">
 
@@ -70,16 +70,21 @@
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('delete-model',['id'=>$valTypes->id]) }}" method="post">
+                                {{--<form action="{{ route('delete-model',['id'=>$valTypes->id]) }}" method="post">
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm">
                                         <i class="fas fa-trash"> </i>
                                         Delete
                                     </button>
-                                </form>
+                                </form>--}}
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                        data-target="#deleteModal">
+                                    <i class="fas fa-trash"></i>
+                                    Delete
+                                </button>
                             </td>
-                            </tr>
-                        @endforeach
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -88,4 +93,25 @@
         <!-- /.card -->
     </section>
 
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+                </div>
+                <form action="{{ route('delete-model',['id'=>$valTypes->id]) }}" method="post">
+                    @csrf
+                    <div class="modal-body">
+                        Are you sure you want to delete this Model?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection

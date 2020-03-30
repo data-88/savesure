@@ -57,13 +57,18 @@
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('delete-brands',['id'=>$valBrands->id]) }}" method="post">
+                                {{--<form action="{{ route('delete-brands',['id'=>$valBrands->id]) }}" method="post">
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm">
-                                        <i class="fas fa-trash"> </i>
+                                        <i class="fas fa-trash"></i>
                                         Delete
                                     </button>
-                                </form>
+                                </form>--}}
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                        data-target="#deleteModal">
+                                    <i class="fas fa-trash"></i>
+                                    Delete
+                                </button>
                             </td>
                         </tr>
                     @endforeach
@@ -74,4 +79,26 @@
         </div>
         <!-- /.card -->
     </section>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+                </div>
+                <form action="{{ route('delete-brands',['id'=>$valBrands->id]) }}" method="post">
+                    @csrf
+                    <div class="modal-body">
+                        Are you sure you want to delete this Brand?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
