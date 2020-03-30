@@ -24,7 +24,7 @@
             <div class="card-header">
                 <h3 class="card-title">Variants</h3>
                 <div class="card-tools">
-                    <a class="btn btn-block btn-primary" href="{{--{{ route('add-variant') }}--}}">Add Model</a>
+                    <a class="btn btn-block btn-primary" href="{{ route('add-variant') }}">Add Variant</a>
                 </div>
                 <br><br>
                 @if (session('status'))
@@ -68,13 +68,13 @@
                             </td>
                             <td class="project-actions text-right">
 
-                                <a class="btn btn-info btn-sm" href="{{--{{route('edit-model',['id'=>$valVariants->id])}}--}}">
+                                <a class="btn btn-info btn-sm" href="{{route('edit-variant',['id'=>$valVariants->id])}}">
                                     <i class="fas fa-pencil-alt"></i>
                                     Edit
                                 </a>
                             </td>
                             <td>
-                                <form action="{{--{{ route('delete-model',['id'=>$valVariants->id]) }}--}}" method="post">
+                                <form action="{{ route('delete-variant',['id'=>$valVariants->id]) }}" method="post">
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm">
                                         <i class="fas fa-trash"> </i>

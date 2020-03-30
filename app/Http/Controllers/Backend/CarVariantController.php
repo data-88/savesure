@@ -4,14 +4,15 @@ namespace App\Http\Controllers\Backend;
 
 use App\Brand;
 use App\Category;
-use App\Type;
 use App\Http\Controllers\Controller;
+use App\Type;
+use App\Variant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class VariantController extends Controller
+class CarVariantController extends Controller
 {
-    protected $pages = 'Backend.pages.variant.';
+    protected $pages = 'Backend.pages.car.variant.';
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +30,7 @@ class VariantController extends Controller
                 'variants.brand_id', 'brands.name as brand_name',
                 'variants.category_id','category.name as cat_name',
                 'variants.type_id','types.name as model_name')
-            ->where('variants.category_id', '=', 1)
+            ->where('variants.category_id', '=', 2)
             ->get();
 
         $category = Category::get();
@@ -50,7 +51,17 @@ class VariantController extends Controller
      */
     public function create()
     {
-        //
+        $brands = Brand::where('category_id', 2)->pluck('name', 'id');
+        $types = Type::get();
+        return view($this->pages . 'add')
+            ->with(['brands' => $brands])
+            ->with(['types' => $types]);
+    }
+
+    public function getModel(Request $request)
+    {
+        $types = Type::where('brand_id', $request->brand_id)->pluck('name', 'id');
+        return response()->json($types);
     }
 
     /**
@@ -61,7 +72,16 @@ class VariantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Variant();
+        $data->category_id = 2;
+        $data->brand_id = request('bikeBrand');
+        $data->type_id = request('bikeModel');
+        $data->name = request('name');
+        $data->vehicle_cc = request('cc');
+
+        $data->save();
+
+        return redirect()->route('car-variant')->with('status','Variant Successfully Added');
     }
 
     /**
@@ -83,7 +103,20 @@ class VariantController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = DB::table('variants')
+            ->join('brands', 'brands.id', 'variants.brand_id')
+            ->join('types', 'types.id', 'variants.type_id')
+            ->select(
+                'variants.id', 'variants.name',
+                'variants.brand_id', 'brands.name as brand_name',
+                'variants.type_id','types.name as model_name')
+            ->get();
+        $variant = Variant::findorFail($id);
+        $brands = Brand::where('category_id', 2)->pluck('name', 'id');
+
+        return view($this->pages . 'update', ['variant' => $variant])
+            ->with(['brands' => $brands])
+            ->with(['data' => $data]);
     }
 
     /**
@@ -95,7 +128,14 @@ class VariantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $variant = Variant::find($id);
+        $variant->name = $request->input('name');
+        $variant->brand_id = request('bikeBrand');
+        $variant->type_id = request('bikeModel');
+        $variant->vehicle_cc = request('cc');
+        $variant->update();
+
+        return redirect()->route('car-variant')->with('status', 'Variant Successfully Updated');
     }
 
     /**
@@ -106,6 +146,9 @@ class VariantController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $variant = Variant::findorFail($id);
+        $variant->delete();
+
+        return redirect()->route('car-variant')->with('status', 'Variant Successfully Deleted.');
     }
 }

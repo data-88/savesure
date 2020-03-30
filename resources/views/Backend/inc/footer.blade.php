@@ -74,4 +74,30 @@
     });
 </script>--}}
 
+<script type="text/javascript">
+    $('#bikeBrand').change(function () {
+        var brandID = $(this).val();
+        console.log(brandID);
+        if (brandID) {
+            $.ajax({
+                type: 'GET',
+                url: '{{url('getModel')}}?brand_id=' + brandID,
+                success: function (res) {
+                    console.log(res)
+                    if (res) {
+                        $('#bikeModel').empty();
+                        $('#bikeModel').append('<option>Select Model</option>');
+                        $.each(res, function (key, value) {
+                            $('#bikeModel').append('<option value="' + key + '">' + value + '</option>');
+                        });
+                    } else {
+                        $('#bikeModel').empty();
+                    }
+                }
 
+            });
+        } else {
+            $('#bikeModel').empty();
+        }
+    });
+</script>

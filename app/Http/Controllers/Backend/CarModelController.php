@@ -4,15 +4,14 @@ namespace App\Http\Controllers\Backend;
 
 use App\Brand;
 use App\Category;
-use App\Type;
 use App\Http\Controllers\Controller;
+use App\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ModelController extends Controller
+class CarModelController extends Controller
 {
-    protected $pages = 'Backend.pages.model.';
-
+    protected $pages = 'Backend.pages.car.model.';
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +27,7 @@ class ModelController extends Controller
                 'types.id', 'types.name',
                 'types.brand_id', 'brands.name as brand_name',
                 'types.category_id','category.name as cat_name')
-            ->where('types.category_id', '=', 1)
+            ->where('types.category_id', '=', 2)
             ->get();
 
         $brands = Brand::get();
@@ -40,11 +39,6 @@ class ModelController extends Controller
             ->with(['data' => $data]);
     }
 
-    /*public function getModel(Request $request)
-    {
-        $types = Type::where('brand_id', $request->brand_id)->get();
-        return response()->json($types);
-    }*/
     /**
      * Show the form for creating a new resource.
      *
@@ -52,36 +46,32 @@ class ModelController extends Controller
      */
     public function create()
     {
-        $brands = Brand::where('category_id', 1)->pluck('name', 'id');
+        $brands = Brand::where('category_id', 2)->pluck('name', 'id');
         return view($this->pages . 'add')->with(['brands' => $brands]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $validateData = request()->validate([
-            'name' => 'required | unique:types'
-        ]);
-
         $data = new Type();
-        $data->category_id = 1;
+        $data->category_id = 2;
         $data->brand_id = request('bikeBrand');
         $data->name = request('name');
 
         $data->save();
 
-        return redirect()->route('model')->with('status', 'Model Successfully Added');
+        return redirect()->route('car-model')->with('status', 'Model Successfully Added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -92,7 +82,7 @@ class ModelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -104,8 +94,8 @@ class ModelController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -120,7 +110,7 @@ class ModelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -128,6 +118,6 @@ class ModelController extends Controller
         $model = Type::findorFail($id);
         $model->delete();
 
-        return redirect()->route('model')->with('status', 'Model Successfully Deleted.');
+        return redirect()->route('car-model')->with('status', 'Model Successfully Deleted.');
     }
 }

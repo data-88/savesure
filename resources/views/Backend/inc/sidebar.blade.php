@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/home" class="brand-link">
+    <a href="/adminPanel" class="brand-link">
         {{--<img src="img/footers_logo.png" class="brand-image img-circle elevation-3" style="opacity: .8">--}}
         <span class="brand-text font-weight-light">Quotes</span>
     </a>
@@ -22,7 +22,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="/home" class="nav-link {{ (request()->segment(1) == 'home') ? 'active' : '' }}">
+                    <a href="/adminPanel" class="nav-link {{ (request()->segment(1) == 'home') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -73,19 +73,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('brands') }}" class="nav-link">
+                            <a href="{{ route('car-brands') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Brand</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('car-model') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Model</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('car-variant') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Variant</p>
                             </a>

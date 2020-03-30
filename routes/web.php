@@ -17,21 +17,21 @@ Route::get('/', function () {
 });
 ---------------------------*/
 
-Route::group(['namespace' => 'Frontend'], function(){
+Route::group(['namespace' => 'Frontend'], function () {
     //Pages
     Route::get('/', 'FrontendController@index')->name('index');
     Route::get('twowheeler', 'FrontendController@twowheeler')->name('two-wheeler');
-    Route::get('car','FrontendController@car')->name('car');
+    Route::get('car', 'FrontendController@car')->name('car');
     Route::get('about', 'FrontendController@about')->name('about-us');
     Route::get('contact', 'FrontendController@contact')->name('contact-us');
     Route::get('preview/{id}', 'FrontendController@preview')->name('company-list');
 
-    Route::get('getTypes','FrontendController@getTypes');
-    Route::get('getVariants','FrontendController@getVariants');
+    Route::get('getTypes', 'FrontendController@getTypes');
+    Route::get('getVariants', 'FrontendController@getVariants');
 
     //Store Form Data Twowheeler
-    Route::get('create','FrontendController@create');
-    Route::post('create','FrontendController@storebike');
+    Route::get('create', 'FrontendController@create');
+    Route::post('create', 'FrontendController@storebike');
 });
 
 Route::group(['namespace' => 'Backend'], function () {
@@ -44,27 +44,67 @@ Route::group(['namespace' => 'Backend'], function () {
     Route::get('adminPanel/about/update/{id}', 'AboutController@edit')->name('edit-about');
     Route::post('adminPanel/about/update/{id}', 'AboutController@update')->name('update-about');
 
+    /*----------------------
+    BIKE BACKEND CONTROLLERS
+    ----------------------*/
     /*Brands Page*/
-    Route::get('adminPanel/brand', 'BrandsController@index')->name('brands');
-    Route::get('adminPanel/brand/add', 'BrandsController@create')->name('add-brands');
-    Route::post('adminPanel/brand/store', 'BrandsController@store')->name('store-brands');
-    Route::get('adminPanel/brand/update/{id}', 'BrandsController@edit')->name('edit-brands');
-    Route::post('adminPanel/brand/update/{id}', 'BrandsController@update')->name('update-brands');
-    Route::post('adminPanel/brand/delete/{id}', 'BrandsController@destroy')->name('delete-brands');
+    Route::get('adminPanel/bike-brand', 'BikeBrandsController@index')->name('brands');
+    Route::get('adminPanel/bike-brand/add', 'BikeBrandsController@create')->name('add-brands');
+    Route::post('adminPanel/bike-brand/store', 'BikeBrandsController@store')->name('store-brands');
+    Route::get('adminPanel/bike-brand/update/{id}', 'BikeBrandsController@edit')->name('edit-brands');
+    Route::post('adminPanel/bike-brand/update/{id}', 'BikeBrandsController@update')->name('update-brands');
+    Route::post('adminPanel/bike-brand/delete/{id}', 'BikeBrandsController@destroy')->name('delete-brands');
 
     /*Model Page*/
-    Route::get('adminPanel/model', 'ModelController@index')->name('model');
-    Route::get('adminPanel/model/add', 'ModelController@create')->name('add-model');
-    Route::post('adminPanel/model/store', 'ModelController@store')->name('store-model');
-    Route::get('adminPanel/model/update/{id}', 'ModelController@edit')->name('edit-model');
-    Route::post('adminPanel/model/update/{id}', 'ModelController@update')->name('update-model');
-    Route::post('adminPanel/model/delete/{id}', 'ModelController@destroy')->name('delete-model');
+    Route::get('adminPanel/bike-model', 'BikeModelController@index')->name('model');
+    Route::get('adminPanel/bike-model/add', 'BikeModelController@create')->name('add-model');
+    Route::post('adminPanel/bike-model/store', 'BikeModelController@store')->name('store-model');
+    Route::get('adminPanel/bike-model/update/{id}', 'BikeModelController@edit')->name('edit-model');
+    Route::post('adminPanel/bike-model/update/{id}', 'BikeModelController@update')->name('update-model');
+    Route::post('adminPanel/bike-model/delete/{id}', 'BikeModelController@destroy')->name('delete-model');
 
 
-    /*Route::get('adminPanel/getModel','ModelController@getModel');*/
+    /*Route::get('adminPanel/getModel','BikeModelController@getModel');*/
 
     /*Variant Page*/
-    Route::get('adminPanel/variant','VariantController@index')->name('variant');
+    Route::get('adminPanel/bike-variant', 'BikeVariantController@index')->name('variant');
+    Route::get('adminPanel/bike-variant/add', 'BikeVariantController@create')->name('add-variant');
+    Route::post('adminPanel/bike-variant/store', 'BikeVariantController@store')->name('store-variant');
+    Route::get('adminPanel/bike-variant/update/{id}', 'BikeVariantController@edit')->name('edit-variant');
+    Route::post('adminPanel/bike-variant/update/{id}', 'BikeVariantController@update')->name('update-variant');
+    Route::post('adminPanel/bike-variant/delete/{id}', 'BikeVariantController@destroy')->name('delete-variant');
+
+
+    Route::get('getModel', 'BikeVariantController@getModel');
+
+    /*----------------------
+    CAR BACKEND CONTROLLERS
+    ----------------------*/
+    /*Brands Page*/
+    Route::get('adminPanel/car-brand', 'CarBrandsController@index')->name('car-brands');
+    Route::get('adminPanel/car-brand/add', 'CarBrandsController@create')->name('add-car-brands');
+    Route::post('adminPanel/car-brand/store', 'CarBrandsController@store')->name('store-car-brands');
+    Route::get('adminPanel/car-brand/update/{id}', 'CarBrandsController@edit')->name('edit-car-brands');
+    Route::post('adminPanel/car-brand/update/{id}', 'CarBrandsController@update')->name('update-car-brands');
+    Route::post('adminPanel/car-brand/delete/{id}', 'CarBrandsController@destroy')->name('delete-car-brands');
+
+    /*Model Page*/
+    Route::get('adminPanel/car-model', 'CarModelController@index')->name('car-model');
+    Route::get('adminPanel/car-model/add', 'CarModelController@create')->name('add-car-model');
+    Route::post('adminPanel/car-model/store', 'CarModelController@store')->name('store-car-model');
+    Route::get('adminPanel/car-model/update/{id}', 'CarModelController@edit')->name('edit-car-model');
+    Route::post('adminPanel/car-model/update/{id}', 'CarModelController@update')->name('update-car-model');
+    Route::post('adminPanel/car-model/delete/{id}', 'CarModelController@destroy')->name('delete-car-model');
+
+    /*Variant Page*/
+    Route::get('adminPanel/car-variant','CarVariantController@index')->name('car-variant');
+    Route::get('adminPanel/car-variant/add', 'CarVariantController@create')->name('add-car-variant');
+    Route::post('adminPanel/car-variant/store', 'CarVariantController@store')->name('store-car-variant');
+    Route::get('adminPanel/car-variant/update/{id}', 'CarVariantController@edit')->name('edit-car-variant');
+    Route::post('adminPanel/car-variant/update/{id}', 'CarVariantController@update')->name('update-car-variant');
+    Route::post('adminPanel/car-variant/delete/{id}', 'CarVariantController@destroy')->name('delete-car-variant');
+
+    Route::get('getModel', 'CarVariantController@getModel');
 
     /*Company Pages*/
     Route::get('adminPanel/company', 'CompaniesController@index')->name('company');
@@ -77,4 +117,4 @@ Route::group(['namespace' => 'Backend'], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/adminPanel', 'Backend\BackendController@index')->name('home');

@@ -2,46 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e73d8a3b-3a0e-465e-9fc8-16d9ff4631ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/About.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CompaniesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ModelController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/VariantController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/aboutController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_14_192354_create_abouts_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/Companies/5095c7046ec43ffc90faf8f3caeb79c5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/Companies/545d46989352710ac60136090fe50198.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/Companies/60b4b2e18fa838ef21b24950af9ba66c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/Companies/cropped-PI-FINAL-APPROVED-LOGO-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/about/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/about/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/about/update.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/company/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/company/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/company/update.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/model/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/model/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/model/update.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/variant/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/variant/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/variant/update.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BikeVariantController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CarModelController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CarVariantController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/variant/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/variant/update.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/brand/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/brand/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/brand/update.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/model/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/model/update.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/variant/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/variant/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/variant/update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Type.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Variant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Variant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_06_091400_create_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_06_091400_create_types_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_202235_create_variants_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_202235_create_variants_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TypeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TypeSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/VariantSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/VariantSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/Companies/nbi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/BackendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BackendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/BrandsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BikeBrandsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ModelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BikeModelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/VariantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CarBrandsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Backend/inc/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/inc/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Backend/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/inc/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/brand/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/brand/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/brand/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/brand/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/inc/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/preview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/preview.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/brand/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/brand/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/brand/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/model/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/model/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/model/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/model/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/model/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/model/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/variant/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/model/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/variant/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/variant/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/variant/update.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,20 +166,21 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Backend/pages/car" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/views/Frontend/pages/preview.blade.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\pages\brand" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\pages\bike" />
       <recent name="C:\xampp\htdocs\Insurance\app\Http\Controllers\Backend" />
       <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\inc" />
       <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend" />
       <recent name="C:\xampp\htdocs\Insurance\app\Http\Controllers\Frontend" />
-      <recent name="C:\xampp\htdocs\Insurance\resources\views\Frontend\pages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\pages\car" />
+      <recent name="C:\xampp\htdocs\Insurance\resources\views\Backend\pages\brand" />
     </key>
   </component>
   <component name="RunManager">
@@ -257,6 +248,8 @@
       <workItem from="1585110278133" duration="551000" />
       <workItem from="1585226605369" duration="8453000" />
       <workItem from="1585279366363" duration="2153000" />
+      <workItem from="1585426791365" duration="15215000" />
+      <workItem from="1585571941772" duration="1078000" />
     </task>
     <servers />
   </component>
@@ -287,13 +280,18 @@
     </state>
     <state x="550" y="256" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1583867404358" />
     <state x="602" y="313" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020@0.0.1680.1020" timestamp="1583856456249" />
+    <state x="486" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585457730030">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="486" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1585457730030" />
     <state x="1170" y="275" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583864741082">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1170" y="275" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1583864741082" />
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585232271004">
-      <screen x="0" y="0" width="1680" height="1020" />
+    <state x="570" y="262" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585496017288">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state x="570" y="262" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1585496017288" />
     <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1585232271004" />
     <state x="651" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1585083041770" />
     <state x="332" y="104" key="CommitChangelistDialog2" timestamp="1582972804863">
@@ -313,17 +311,19 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="181" y="192" key="SettingsEditor/0.0.1680.1020@0.0.1680.1020" timestamp="1582476372258" />
-    <state x="618" y="341" key="com.intellij.ide.util.TipDialog" timestamp="1585426795786">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="541" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1585572072543">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="495" y="273" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1583865619112" />
+    <state x="541" y="331" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1585572072543" />
     <state x="541" y="334" key="com.intellij.ide.util.TipDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1585280556211" />
     <state x="618" y="341" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585426795786" />
     <state x="618" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1585082965362" />
-    <state x="649" y="427" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585057249904">
-      <screen x="0" y="0" width="1680" height="1020" />
+    <state x="742" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585430695752">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="649" y="427" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1020@0.0.1680.1020" timestamp="1585057249904" />
+    <state x="742" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585430695752" />
     <state x="742" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1583000745832" />
     <state x="472" y="55" width="736" height="909" key="find.popup" timestamp="1582972660914">
       <screen x="0" y="0" width="1680" height="1020" />
@@ -333,11 +333,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1584042617320" />
-    <state x="923" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585291657190">
-      <screen x="0" y="0" width="1680" height="1020" />
+    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup" timestamp="1585498344476">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="844" y="184" width="672" height="555" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1583957025754" />
+    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1585498344476" />
     <state x="923" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1680.1020@0.0.1680.1020" timestamp="1585291657190" />
+    <state x="1055" y="229" width="768" height="692" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585430702104" />
     <state x="1055" y="232" width="768" height="698" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1585083692900" />
   </component>
 </project>

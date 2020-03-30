@@ -5,11 +5,10 @@ namespace App\Http\Controllers\Backend;
 use App\Brand;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class BrandsController extends Controller
+class CarBrandsController extends Controller
 {
-    protected $pages = 'Backend.pages.brand.';
+    protected $pages = 'Backend.pages.car.brand.';
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +16,7 @@ class BrandsController extends Controller
      */
     public function index()
     {
-        $brands = Brand::where('category_id', 1)->get();
+        $brands = Brand::where('category_id', 2)->get();
         return view($this->pages. 'home', ['brands'=>$brands]);
     }
 
@@ -40,15 +39,14 @@ class BrandsController extends Controller
     public function store(Request $request)
     {
         $validateData = request()->validate([
-           'name' => 'required | unique:brands'
+            'name' => 'required | unique:brands'
         ]);
-
         $data = new Brand();
         $data->name = request('name');
-        $data->category_id = 1;
+        $data->category_id = 2;
         $data->save();
 
-        return redirect()->route('brands')->with('status','Brand Successfully Added');
+        return redirect()->route('car-brands')->with('status','Brand Successfully Added');
     }
 
     /**
@@ -87,7 +85,7 @@ class BrandsController extends Controller
         $brands->name = $request->input('name');
         $brands->update();
 
-        return redirect()->route('brands')->with('status','Brand Successfully Updated');
+        return redirect()->route('car-brands')->with('status','Brand Successfully Updated');
     }
 
     /**
@@ -101,7 +99,6 @@ class BrandsController extends Controller
         $brands = Brand::findorFail($id);
         $brands->delete();
 
-        return redirect()->route('brands')->with('status','Brand Successfully Deleted.');
-
+        return redirect()->route('car-brands')->with('status','Brand Successfully Deleted.');
     }
 }
