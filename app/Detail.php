@@ -17,7 +17,7 @@ class Detail extends Model
     protected $table = 'details';
 
     protected $fillable = [
-        'name', 'email', 'phone', 'brand_id', 'type_id', 'variant_id','date', 'status'
+        'name', 'email', 'phone', 'brand_id', 'type_id', 'variant_id','date', 'status','yearsBeforePurchase'
     ];
 
     /**

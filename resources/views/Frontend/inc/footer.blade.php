@@ -117,8 +117,11 @@
 
 <script src="{{ URL::asset('js/main.js') }}"></script>
 
-<script src="{{ URL::asset('http://code.jquery.com/jquery-2.1.3.js') }}"></script>
 <script src="{{ URL::asset('https://code.jquery.com/ui/1.12.1/jquery-ui.js') }}"></script>
+
+<script src="{{ URL::asset('js/comparision.js') }}"></script>
+
+@yield('js_content')
 
 
 {{--Javascript with ajax for dynamic dropdown brand-type--}}
@@ -176,33 +179,7 @@
     });
 </script>
 
-{{--Preview page idv slider and checkbox script--}}
-<script>
-    // $('#policy_type').text('Third Party');
-
-    $(document).ready(function () {
-        $('#thirdparty').prop('checked', true);
-        $('#thirdparty').click(function () {
-            $('#thirdparty').prop('checked', true);
-            alert('Third Party Coverage is the minimum. Thus, this cannot be unchecked.');
-        });
-    });
-
-    //Checkbox check and uncheck
-
-    /*$('#comprehensive').click(function () {
-        //if checked.
-        if ($(this).prop('checked')) {
-            $('#policy_type').append(', Comprehensive');
-        } else {
-            $('#policy_type').text('Third Party');
-        }
-    });*/
-
-
-</script>
-
-
+{{--Preview page idv slider and checkbox script--}}{{--
 <script>
     $(function () {
         $('#comprehensive').click(function () {
@@ -218,18 +195,6 @@
                     slide: function (event, ui) {
                         //Value changes according to the slider
                         $("#amount").val("IDV : " + "RS." + ui.value);
-                        //Get Value
-                        var idv = ui.value;
-                        var prem = $("#ccPrem").text();
-                        var basePrem = 1000;
-                        if (idv >= 67000) {
-                            basePrem = 1005
-                            for(let i =68000; i == 1000000; i += 1000){
-                                basePrem = 1005;
-                                basePrem += 15;
-                            }
-                        }
-                        console.log(basePrem);
                     }
                 });
                 //Initial Value Display
@@ -241,7 +206,7 @@
             }
         });
     });
-</script>
+</script>--}}
 
 
 

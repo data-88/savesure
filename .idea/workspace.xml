@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e73d8a3b-3a0e-465e-9fc8-16d9ff4631ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/img/Companies/ea6fa0c991af41bd7443c1f7c837341a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/comparision.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/about/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/about/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/bike/model/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/model/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/bike/variant/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/variant/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/car/brand/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/brand/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/car/model/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/model/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/car/variant/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/car/variant/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/company/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/company/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_28_191659_create_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_28_191659_create_details_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/inc/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/inc/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/preview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/preview.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +228,13 @@
       <workItem from="1585226605369" duration="8453000" />
       <workItem from="1585279366363" duration="2153000" />
       <workItem from="1585426791365" duration="15215000" />
-      <workItem from="1585571941772" duration="5479000" />
+      <workItem from="1585571941772" duration="6748000" />
+      <workItem from="1585717653772" duration="3804000" />
+      <workItem from="1585736225679" duration="656000" />
+      <workItem from="1585769083097" duration="14833000" />
+      <workItem from="1585814721925" duration="18932000" />
+      <workItem from="1585914951688" duration="931000" />
+      <workItem from="1586172162808" duration="9185000" />
     </task>
     <servers />
   </component>
@@ -262,6 +265,10 @@
     </state>
     <state x="550" y="256" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1583867404358" />
     <state x="602" y="313" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020@0.0.1680.1020" timestamp="1583856456249" />
+    <state x="940" y="244" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585814639110">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="940" y="244" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1585814639110" />
     <state x="486" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585457730030">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -270,12 +277,16 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1170" y="275" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1583864741082" />
-    <state x="570" y="262" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585496017288">
+    <state x="570" y="262" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585805092690">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="570" y="262" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1585496017288" />
+    <state x="570" y="262" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1585805092690" />
     <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1585232271004" />
     <state x="651" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1585083041770" />
+    <state x="524" y="160" width="645" height="690" key="#phpunit.xml" timestamp="1586175184500">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="524" y="160" width="645" height="690" key="#phpunit.xml/0.0.1680.1010@0.0.1680.1010" timestamp="1586175184500" />
     <state x="332" y="104" key="CommitChangelistDialog2" timestamp="1582972804863">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
@@ -293,17 +304,18 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="181" y="192" key="SettingsEditor/0.0.1680.1020@0.0.1680.1020" timestamp="1582476372258" />
-    <state x="541" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1585572072543">
+    <state x="541" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1586172163290">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="495" y="273" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1583865619112" />
-    <state x="541" y="331" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1585572072543" />
+    <state x="541" y="331" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1586172163290" />
     <state x="541" y="334" key="com.intellij.ide.util.TipDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1585280556211" />
-    <state x="618" y="341" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585426795786" />
+    <state x="618" y="341" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585769138131" />
     <state x="618" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1585082965362" />
-    <state x="742" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585430695752">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="649" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586182268069">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state x="649" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010@0.0.1680.1010" timestamp="1586182268069" />
     <state x="649" y="427" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1020@0.0.1680.1020" timestamp="1585057249904" />
     <state x="742" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585430695752" />
     <state x="742" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1583000745832" />
@@ -315,13 +327,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1584042617320" />
-    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup" timestamp="1585575599922">
+    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup" timestamp="1586175093586">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="844" y="184" width="672" height="555" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1583957025754" />
-    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1585575599922" />
+    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1586175093586" />
     <state x="923" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1680.1020@0.0.1680.1020" timestamp="1585291657190" />
-    <state x="1055" y="229" width="768" height="692" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585430702104" />
+    <state x="1055" y="229" width="768" height="692" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585769997234" />
     <state x="1055" y="232" width="768" height="698" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1585083692900" />
   </component>
 </project>

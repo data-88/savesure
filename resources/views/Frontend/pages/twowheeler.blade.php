@@ -131,7 +131,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div>
-                                    <select name="date" class="Wide form-control">
+                                    <select name="date" class="wide form-control">
                                         <option value="">Year Of Purchase</option>
                                         @for($year=2010; $year<=date('Y'); $year++){ ?>
                                         <option value="{{ $year }}">{{ $year }}</option>
@@ -140,12 +140,22 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div>
+                                <div id="oldNew" aria-required="true">
                                     <li>
                                         <h6>This Vehicle is?</h6>
-                                        <input type="radio" name="status" value='old' checked> Old
-                                        <input type="radio" name="status" value='new'> Brand New
+                                        <input type="radio" name="status" value='0'> Old
+                                        <input type="radio" name="status" value='1'> Brand New
                                     </li>
+                                </div>
+                                <div class="oldYear" style="display: none;">
+                                    <h6>How old was the vehicle the time of purchase:</h6>
+                                        <select id="yearsBeforePurchase" class="form-control" name="yearsBeforePurchase">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
                                 </div>
                             </div>
                             <div class="col-md-12">

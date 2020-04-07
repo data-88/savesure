@@ -65,6 +65,7 @@ class FrontendController extends Controller
                 'variant_id' => $request->get('variant'),
                 'date' => $request->get('date'),
                 'status' => $request->get('status'),
+                'yearsBeforePurchase'=> $request->get('yearsBeforePurchase')
             ]);
 
         $result = $data->save();
@@ -96,7 +97,7 @@ class FrontendController extends Controller
             ->leftjoin('types', 'types.id', 'details.type_id')
             ->leftjoin('variants', 'variants.id', 'details.variant_id')
             ->select(
-                'details.id', 'details.name', 'details.email', 'details.phone', 'details.date', 'details.status',
+                'details.id', 'details.name', 'details.email', 'details.phone', 'details.date', 'details.status','details.yearsBeforePurchase',
                 'details.brand_id', 'brands.name as brand_name',
                 'details.type_id', 'types.name as type_name',
                 'details.variant_id', 'variants.name as variant_name', 'variants.vehicle_cc as val_cc'

@@ -27,8 +27,8 @@
                     <h6>Bike Model: {{ $data->type_name }}</h6>
                     <h6>Bike Variant: {{ $data->variant_name }} </h6>
                 </div>
-                <div class="col col-md-3"style="text-align: center; margin-top: 25px">
-                    <h6>Premium: रू <span id="ccPrem">{{$ccAmt}}</span> </h6>
+                <div class="col col-md-3" style="text-align: center; margin-top: 25px">
+                    <h6>Premium: रू <span id="ccPrem">{{$ccAmt}}</span></h6>
                 </div>
                 <div class="col-md-3" style="text-align: center; margin-top: 25px">
                     <h6>Registration Date: {{ $data->date }}</h6>
@@ -42,17 +42,20 @@
             <div class="col col-lg-2 col-md-3 col-sm-12" style="padding-top: 10px;">
 
                 <div>
-                    <input type="checkbox" name="thirdparty" id="thirdparty" checked>
-                    <label for="thirdparty">Third Party</label>
-
-                    <input type="checkbox" name="comprehensive" id="comprehensive">
-                    <label for="comprehensive">Comprehensive</label>
+                    <input class=" basic-coverage" type="checkbox" onclick="return false" value=""
+                           id="basic-coverage" checked>
+                    <label for="basic-coverage">Third Party</label>
+                </div>
+                <div class="firstParty">
+                    <input class="full_coverage" type="checkbox" name="comprehensive" id="full_coverage">
+                    <label for="full_coverage">Comprehensive</label>
                 </div>
                 <br>
-                <div id="slider" display="block">
+                <div class="firstpartyform" id="slider" style="display: none;">
                     <br>
                     <p>
-                        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                        <label for="idv_name">Sum Assured</label>
+                        <input name="idv_name" type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
                     </p>
                 </div>
                 {{--<div id="RSMTD">
@@ -61,7 +64,6 @@
                 </div>--}}
 
             </div>
-            {{--{{ dd($company) }}--}}
 
             <div class="col col-lg-10 col-md-9 col-sm-12">
                 <div class="row">
@@ -72,9 +74,15 @@
                                     <img class="" style="width: 75px; height: 75px;"
                                          src="{{ asset('img/Companies/'.$company->image) }}" alt="Card image cap">
                                     <h5 class="card-title">{{ $company->name}}</h5>
-                                    <p class="card-text" id="policy_type">Third Party</p>
-                                    <p></p>
-                                    <button class="genric-btn success-border medium" type="submit">{{'रू '.$ccAmt}}</button>
+                                    <tr>
+                                        <td><i class="fa fa-check thirdcheck"></i> Third Party</td>
+                                    </tr>
+                                    <br>
+                                    <tr>
+                                        <td><i class="fa fa-times firstcheck"></i> Comprehensive</td>
+                                    </tr>
+                                    <br><br>
+                                    <button class="genric-btn success-border medium">{{'रू '.$ccAmt}}</button>
                                 </div>
                             </div>
                         </div>
@@ -83,4 +91,33 @@
             </div>
         </div>
     </div>
+
+
+@endsection
+
+@section('js_content')
+    <script type="text/javascript">
+
+
+        var thirdPartyLiability = {!! json_encode($ccAmt) !!};
+        var eodRate = 0;
+        if( eod == 0){
+            eodRate = 0;
+        }
+        else if(eod == 500){
+            eodRate = 10;
+        }
+        else if(eod == 1000){
+            eodRate = 10;
+        }
+        else if(eod >= 1000){
+            eodRate = 20;
+        }
+
+        var ncdRate = 0;
+        var rsmdRate = 0.1;
+        var terroristRate = 0.05;
+
+        var purchaseAge = 0;
+    </script>
 @endsection
