@@ -1,19 +1,7 @@
 /*
 ===================== Preview page idv slider and checkbox script ========================
 */
-/*var eodBearAmount;
-$(document).on('click','.oldOrNew',function () {
-    var oldOrNew = $(this).val();
-    if (oldOrNew == 0){
-        $('.oldOrNew').show();
-    }
-    if (oldOrNew == 1){
-        $('.oldOrNew').hide();
-        $(#yearsBeforePurchase).val();
-    }
-});*/
 
-var eodBearAmount;
 $(document).on('click', '#oldNew input', function () {
     var oldYear = $(this).val();
     if (oldYear == 0) {
@@ -27,7 +15,7 @@ $(document).on('click', '#oldNew input', function () {
 
 
 /*
-================== Checkbox Alert, Slider togger and Icon Class Change ===================
+================== Checkbox Alert, Slider toggle and Icon Class Change ===================
 */
 $(document).ready(function () {
     $(document).on('click', '.basic-coverage', function () {
@@ -36,7 +24,6 @@ $(document).ready(function () {
 
     var thirdPartyAmount = parseInt($('#ccPrem').text());
     var netThirdPayment = 0;
-    // alert(thirdPartyAmount);
 
     $(document).on('click', '.full_coverage', function () {
         $('.firstpartyform').toggle();
@@ -48,33 +35,22 @@ $(document).ready(function () {
             step: 1000,
             slide: function (event, ui) {
                 $("#amount").val("$" + ui.value);
-                var incData = ui.value * 1.5 / 100;
-                var normalPremium = incData >= 1000 ? incData : 1000;
-                console.log(normalPremium);
+                var incData = ui.value * 1.5 / 100;                                                                     /*Comprehenive Price Rate Formula*/
+                var normalPremium = incData >= 1000 ? incData : 1000;                                                   /*If incData is less than 1000 then incData value is 1000*/
                 if (ui.value > last) {
-                    if (ui.value == 67000) {
-                        netThirdPayment = 5;
-                        thirdPartyAmount = thirdPartyAmount + netThirdPayment;
+                    if (ui.value >= 67000){
+                        thirdPartyAmount = thirdPartyLiability + incData;
                         $("#ccPrem").text(thirdPartyAmount);
-                    } else if (ui.value > 67000) {
-                        netThirdPayment = 15;
-                        thirdPartyAmount = thirdPartyAmount + netThirdPayment;
-                        $("#ccPrem").text(thirdPartyAmount);
-                    } else {
-                        netThirdPayment;
                     }
                 }
                 if (ui.value < last){
-                    if (ui.value == 67000) {
-                        netThirdPayment = 20;
-                        thirdPartyAmount = thirdPartyAmount - netThirdPayment;
+                    if (ui.value >= 67000){
+                        thirdPartyAmount = thirdPartyLiability + incData;
                         $("#ccPrem").text(thirdPartyAmount);
-                    } else if (ui.value > 67000) {
-                        netThirdPayment = 15;
-                        thirdPartyAmount = thirdPartyAmount - netThirdPayment;
+                    }
+                    if (ui.value <= 67000){
+                        thirdPartyAmount = thirdPartyLiability + normalPremium;
                         $("#ccPrem").text(thirdPartyAmount);
-                    } else {
-                        netThirdPayment;
                     }
                 }
                 last = ui.value;
@@ -85,16 +61,11 @@ $(document).ready(function () {
         if (document.getElementById('full_coverage').checked) {
             $('.firstcheck').addClass('fa-check');
             $('.firstcheck').removeClass('fa-times');
-             netThirdPayment = 1000;
-             thirdPartyAmount = thirdPartyLiability + netThirdPayment;
-             $("#ccPrem").text(thirdPartyAmount);
-
+            thirdPartyAmount = thirdPartyLiability + 1000;
+            $("#ccPrem").text(thirdPartyAmount);
         } else {
             $('.firstcheck').removeClass('fa-check');
             $('.firstcheck').addClass('fa-times');
-            /*netThirdPayment = 1000;
-            thirdPartyAmount = thirdPartyAmount - netThirdPayment;
-            $("#ccPremium").text(thirdPartyAmount);*/
             $("#ccPrem").text(thirdPartyLiability);
 
         }

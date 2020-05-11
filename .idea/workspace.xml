@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e73d8a3b-3a0e-465e-9fc8-16d9ff4631ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/Companies/ea6fa0c991af41bd7443c1f7c837341a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/comparision.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_28_191659_create_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_28_191659_create_details_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/inc/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/inc/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/comparision.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/comparision.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/preview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/preview.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,6 +228,17 @@
       <workItem from="1585814721925" duration="18932000" />
       <workItem from="1585914951688" duration="931000" />
       <workItem from="1586172162808" duration="9185000" />
+      <workItem from="1586268913960" duration="36000" />
+      <workItem from="1586276643375" duration="3000" />
+      <workItem from="1586338962876" duration="1695000" />
+      <workItem from="1586350559989" duration="1825000" />
+      <workItem from="1586510850916" duration="1440000" />
+      <workItem from="1586520585114" duration="620000" />
+      <workItem from="1588670626558" duration="269000" />
+      <workItem from="1588670914995" duration="925000" />
+      <workItem from="1588671865811" duration="555000" />
+      <workItem from="1588672518200" duration="2705000" />
+      <workItem from="1589207269568" duration="1851000" />
     </task>
     <servers />
   </component>
@@ -248,10 +252,6 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="432" y="184" key="#Composer" timestamp="1577542474235">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="432" y="184" key="#Composer/0.0.1680.1050@0.0.1680.1050" timestamp="1577542474235" />
     <state x="852" y="172" key="#Notifications" timestamp="1582472726008">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
@@ -304,12 +304,12 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="181" y="192" key="SettingsEditor/0.0.1680.1020@0.0.1680.1020" timestamp="1582476372258" />
-    <state x="541" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1586172163290">
+    <state x="541" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1589207271013">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="495" y="273" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1583865619112" />
-    <state x="541" y="331" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1586172163290" />
-    <state x="541" y="334" key="com.intellij.ide.util.TipDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1585280556211" />
+    <state x="541" y="331" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1589207271013" />
+    <state x="541" y="334" key="com.intellij.ide.util.TipDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1586510893198" />
     <state x="618" y="341" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585769138131" />
     <state x="618" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1585082965362" />
     <state x="649" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586182268069">

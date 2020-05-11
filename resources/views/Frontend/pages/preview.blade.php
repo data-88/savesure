@@ -36,11 +36,11 @@
             </div>
         </div>
     </div>
+
     {{-- Display Section --}}
     <div class="container" style="padding-top: 10px;">
         <div class="row">
             <div class="col col-lg-2 col-md-3 col-sm-12" style="padding-top: 10px;">
-
                 <div>
                     <input class=" basic-coverage" type="checkbox" onclick="return false" value=""
                            id="basic-coverage" checked>
@@ -58,13 +58,12 @@
                         <input name="idv_name" type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
                     </p>
                 </div>
-                {{--<div id="RSMTD">
+                <div id="RSMTD">
                     <input type="checkbox" name="RSMT" id="RSMT">
                     <label for="RSMT">Riot/ Strike/ Malicious/ Terrorism Damage</label>
-                </div>--}}
-
+                </div>
             </div>
-
+            {{--Company Display Section--}}
             <div class="col col-lg-10 col-md-9 col-sm-12">
                 <div class="row">
                     @foreach ($company as $company)
@@ -97,8 +96,6 @@
 
 @section('js_content')
     <script type="text/javascript">
-
-
         var thirdPartyLiability = {!! json_encode($ccAmt) !!};
         var eodRate = 0;
         if( eod == 0){
@@ -117,6 +114,7 @@
         var ncdRate = 0;
         var rsmdRate = 0.1;
         var terroristRate = 0.05;
+        var stampduty = 20;
 
         var purchaseAge = 0;
     </script>
