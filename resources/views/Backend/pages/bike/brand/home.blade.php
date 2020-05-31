@@ -50,20 +50,12 @@
                                 <a>{{$valBrands->name}}</a>
                             </td>
                             <td class="project-actions text-right">
-
                                 <a class="btn btn-info btn-sm" href="{{route('edit-brands',['id'=>$valBrands->id])}}">
                                     <i class="fas fa-pencil-alt"></i>
                                     Edit
                                 </a>
                             </td>
                             <td>
-                                {{--<form action="{{ route('delete-brands',['id'=>$valBrands->id]) }}" method="post">
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm">
-                                        <i class="fas fa-trash"></i>
-                                        Delete
-                                    </button>
-                                </form>--}}
                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                         data-target="#deleteModal">
                                     <i class="fas fa-trash"></i>

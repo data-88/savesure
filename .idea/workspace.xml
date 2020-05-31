@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e73d8a3b-3a0e-465e-9fc8-16d9ff4631ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/display.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_24_152025_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_24_152025_create_category_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_28_191659_create_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_28_191659_create_details_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/comparision.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/comparision.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/pages/bike/brand/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/inc/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/inc/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/inc/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/inc/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/car.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/car.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/preview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/preview.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/twowheeler.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +251,20 @@
       <workItem from="1588670914995" duration="925000" />
       <workItem from="1588671865811" duration="555000" />
       <workItem from="1588672518200" duration="2705000" />
-      <workItem from="1589207269568" duration="1851000" />
+      <workItem from="1589207269568" duration="1924000" />
+      <workItem from="1589475450766" duration="452000" />
+      <workItem from="1589736801517" duration="11000" />
+      <workItem from="1589781760447" duration="23077000" />
+      <workItem from="1589871425055" duration="8887000" />
+      <workItem from="1590124070655" duration="4959000" />
+      <workItem from="1590337283460" duration="2858000" />
+      <workItem from="1590396287949" duration="4982000" />
+      <workItem from="1590471452860" duration="3749000" />
+      <workItem from="1590499834013" duration="1477000" />
+      <workItem from="1590554816100" duration="5466000" />
+      <workItem from="1590679352587" duration="6351000" />
+      <workItem from="1590744685268" duration="764000" />
+      <workItem from="1590846168291" duration="11679000" />
     </task>
     <servers />
   </component>
@@ -304,18 +330,22 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="181" y="192" key="SettingsEditor/0.0.1680.1020@0.0.1680.1020" timestamp="1582476372258" />
-    <state x="541" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1589207271013">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1590919645650">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1680.1010@0.0.1680.1010" timestamp="1590919645650" />
+    <state x="541" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1590846213888">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="495" y="273" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1583865619112" />
-    <state x="541" y="331" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1589207271013" />
+    <state x="541" y="331" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1590846213888" />
     <state x="541" y="334" key="com.intellij.ide.util.TipDialog/0.0.1680.1020@0.0.1680.1020" timestamp="1586510893198" />
-    <state x="618" y="341" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585769138131" />
+    <state x="618" y="341" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589736809823" />
     <state x="618" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1585082965362" />
-    <state x="649" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586182268069">
+    <state x="649" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590683020962">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="649" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010@0.0.1680.1010" timestamp="1586182268069" />
+    <state x="649" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010@0.0.1680.1010" timestamp="1590683020962" />
     <state x="649" y="427" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1020@0.0.1680.1020" timestamp="1585057249904" />
     <state x="742" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585430695752" />
     <state x="742" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1583000745832" />
@@ -327,13 +357,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1584042617320" />
-    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup" timestamp="1586175093586">
+    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup" timestamp="1590934283128">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="844" y="184" width="672" height="555" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1583957025754" />
-    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1586175093586" />
+    <state x="923" y="222" width="672" height="673" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1590934283128" />
     <state x="923" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1680.1020@0.0.1680.1020" timestamp="1585291657190" />
-    <state x="1055" y="229" width="768" height="692" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585769997234" />
+    <state x="1055" y="229" width="768" height="692" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590565738651" />
     <state x="1055" y="232" width="768" height="698" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1585083692900" />
   </component>
 </project>

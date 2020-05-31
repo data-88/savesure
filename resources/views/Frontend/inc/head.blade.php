@@ -6,6 +6,7 @@
 <!-- Style -->
 <link href="{{asset('css/style.css')}}" rel="stylesheet">
 {{--Template CSS--}}
+{{--
 <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 <link rel="stylesheet" href="{{asset('css/themify-icons.css')}}">
@@ -15,9 +16,9 @@
 <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/slick.css')}}">
 <link rel="stylesheet" href="{{asset('css/slicknav.css')}}">
+--}}
 
 <link rel="stylesheet" href="{{URL::asset('//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')}}">
-<link rel="stylesheet" href="{{asset('/resources/demos/style.css')}}">
 
 <!-- Fonts -->
 <link href="{{URL::asset('https://fonts.googleapis.com/css?family=Nunito:200,600')}}" rel="stylesheet">

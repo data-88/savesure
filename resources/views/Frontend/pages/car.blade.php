@@ -77,12 +77,22 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="pay_text">
+                                <div id="oldNew" aria-required="true">
                                     <li>
                                         <h6>This Vehicle is?</h6>
-                                        <input type="radio" name="status" value='old' checked> Old
-                                        <input type="radio" name="status" value='new'> Brand New
+                                        <input type="radio" name="status" value='0'> Old
+                                        <input type="radio" name="status" value='1'> Brand New
                                     </li>
+                                </div>
+                                <div class="oldYear" style="display: none;">
+                                    <h6>How old was the vehicle the time of purchase:</h6>
+                                    <select id="yearsBeforePurchase" class="form-control" name="yearsBeforePurchase">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -97,8 +107,8 @@
         </div>
     </div>
     <!--/ apply_form_area -->
-
-    {{--Javascript with ajax for dynamic dropdown brand-type--}}
+{{--
+    --}}{{--Javascript with ajax for dynamic dropdown brand-type--}}{{--
     <script type="text/javascript">
         $('#brand').change(function () {
             var brandID = $(this).val();
@@ -125,7 +135,7 @@
             }
         });
 
-        {{--Javascript with ajax for dynamic dropdown type-variants--}}
+        --}}{{--Javascript with ajax for dynamic dropdown type-variants--}}{{--
         $('#type').on('change', function () {
             var typeID = $(this).val();
             if (typeID) {
@@ -148,5 +158,5 @@
                 $('#variant').empty();
             }
         });
-    </script>
+    </script>--}}
 @endsection

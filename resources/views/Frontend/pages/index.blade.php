@@ -1,28 +1,6 @@
 @extends('Frontend.master')
 
 @section('content')
-    {{--<div class="container">
-        <!-- Row of columns -->
-        <div class="row" style="padding-top:20px;">
-            <div class="col-md-4">
-                <img src="{{ asset('img/bike.png') }}" alt="Generic placeholder image"
-                    width="140" height="140">
-                <h2>Bike</h2>
-                <p><a class="btn btn-secondary" href="/twowheeler" role="button">Get Quotes &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <img src="{{ asset('img/car.png') }}" alt="Generic placeholder image" width="140"
-                    height="140">
-                <h2>Car</h2>
-                <p><a class="btn btn-secondary" href="/car" role="button">Get Quotes &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <img  src="{{ asset('img/bus.png') }}" alt="Generic placeholder image" width="140"
-                    height="140">
-                <h2>Commercial Vehicle</h2>
-                <p><a class="btn btn-secondary" href="#" role="button">Get Quotes &raquo;</a></p>
-            </div>
-        </div>--}}
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="single_slider  d-flex align-items-center slider_bg_1">

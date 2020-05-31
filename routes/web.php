@@ -24,7 +24,8 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('car', 'FrontendController@car')->name('car');
     Route::get('about', 'FrontendController@about')->name('about-us');
     Route::get('contact', 'FrontendController@contact')->name('contact-us');
-    Route::get('preview/{id}', 'FrontendController@preview')->name('company-list');
+    Route::get('quotes/enquiry_{id}', 'FrontendController@preview')->name('company-list');
+    Route::get('display/{id}', 'FrontendController@display')->name('display-list');
 
     Route::get('getTypes', 'FrontendController@getTypes');
     Route::get('getVariants', 'FrontendController@getVariants');
@@ -33,6 +34,10 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('create', 'FrontendController@create');
     Route::post('create', 'FrontendController@storebike');
 });
+
+/*----------------------
+  BACKEND CONTROLLERS
+----------------------*/
 
 Route::group(['namespace' => 'Backend','middleware' => 'auth'], function () {
     Route::get('adminPanel', 'BackendController@index')->name('dashboard');

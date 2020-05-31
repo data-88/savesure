@@ -149,13 +149,13 @@
                                 </div>
                                 <div class="oldYear" style="display: none;">
                                     <h6>How old was the vehicle the time of purchase:</h6>
-                                        <select id="yearsBeforePurchase" class="form-control" name="yearsBeforePurchase">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
+                                    <select id="yearsBeforePurchase" class="form-control" name="yearsBeforePurchase">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12">

@@ -22,8 +22,8 @@ class CreateDetailsTable extends Migration
             $table->integer('type_id');
             $table->integer('variant_id');
             $table->integer('date');
-            $table->string('status');
-            $table->string('yearsBeforePurchase');
+            $table->integer('status');
+            $table->integer('yearsBeforePurchase');
             $table->timestamps();
         });
     }
