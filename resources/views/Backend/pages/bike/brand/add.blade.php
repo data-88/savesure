@@ -40,6 +40,15 @@
                             <h3 class="card-title">Bike Brand</h3>
                         </div>
                         <div class="card-body">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="form-group">
                                 <label for="inputName">Brand Name</label>
                                 <input type="text" name="name" id="inputName" class="form-control" placeholder="Name">

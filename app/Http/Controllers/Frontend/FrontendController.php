@@ -54,6 +54,15 @@ class FrontendController extends Controller
     //Storing User and Bike Details.
     public function storeBike(Request $request)
     {
+        $check = $request->validate([
+            'name' => 'required | max:255',
+            'email' => 'required | email ',
+            'phone' => 'required | phone:NP,AUTO',
+            'brand' => 'required',
+            'type' => 'required',
+            'variant' => 'required',
+            'date' => 'required',
+        ]);
         // Storing user vehicle details into a database
         $data = new Detail(
             [
@@ -67,6 +76,8 @@ class FrontendController extends Controller
                 'status' => $request->get('status'),
                 'yearsBeforePurchase'=> $request->get('yearsBeforePurchase')
             ]);
+
+        $data->company_id = 0;
 
         $result = $data->save();
         if ($result) {
@@ -120,20 +131,21 @@ class FrontendController extends Controller
             ->with(['ccAmt' => $ccAmt]);
     }
 
-    public function display($id)
+    public function display($id,$user)
     {
         // Joining brand table, type table, variant table with detail table.
         $data = DB::table('details')
             ->join('brands', 'brands.id', 'details.brand_id')
             ->leftjoin('types', 'types.id', 'details.type_id')
             ->leftjoin('variants', 'variants.id', 'details.variant_id')
+            ->leftjoin('companies', 'companies.id', 'details.company_id')
             ->select(
                 'details.id', 'details.name', 'details.email', 'details.phone', 'details.date', 'details.status','details.yearsBeforePurchase',
                 'details.brand_id', 'brands.name as brand_name',
                 'details.type_id', 'types.name as type_name',
                 'details.variant_id', 'variants.name as variant_name', 'variants.vehicle_cc as val_cc'
             )
-            ->where('details.id', $id)->first();
+            ->where('details.id', $user)->first();
 
         $company = Company::findorFail($id);
         $premium = Premium::get();

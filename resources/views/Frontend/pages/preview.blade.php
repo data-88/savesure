@@ -32,15 +32,6 @@
                 </div>
                 <div class="col-md-3" style="text-align: center; margin-top: 25px">
                     <h6>Registration Date: {{ $data->date }}</h6>
-                    {{--<div style="width: 100px;margin-left: 45px;visibility: hidden" id="eoDiv">
-                        <label for="eod">EOD: </label>
-                        <select name="eod" id="eod">
-                            <option value="0" selected>0</option>
-                            <option value="500">500</option>
-                            <option value="1000">1000</option>
-                            <option value="2000">2000</option>
-                        </select>
-                    </div>--}}
                 </div>
             </div>
         </div>
@@ -64,7 +55,8 @@
                     <br>
                     <p>
                         <label for="idv_name">Sum Assured</label>
-                        <input name="idv_name" type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                        <input name="idv_name" type="text" id="amount" readonly
+                               style="border:0; color:#f6931f; font-weight:bold;">
                     </p>
                     <br>
                 </div>
@@ -92,10 +84,11 @@
                                     </tr>
                                     <br>
                                     <br>
-                                    <form action="{{ route('display-list',['id'=>$company->id]) }}" method="get">
-                                        @csrf
-                                        <button class="genric-btn success-border medium" type="submit" id="btn-send">रू <span class="ccPrem2">{{$ccAmt}}</span></button>
-                                    </form>
+                                    <button
+                                        data-url="{{ route('display-list',['id'=>$company->id,'user'=>$data->id]) }}?userValue=%userValue%"
+                                        class="genric-btn success-border medium company-redirect" id="btn-send">
+                                        रू <span class="ccPrem2">{{$ccAmt}}</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -111,52 +104,43 @@
 @section('js_content')
     <script type="text/javascript">
         var thirdPartyLiability = {!! json_encode($ccAmt) !!};                                                          //Storing Third Party Amount of the Vehicle.
-    /*
-    -------------------------------- Calulation of Vehicle AGE -----------------------------------
-    */
+        /*
+        -------------------------------- Calulation of Vehicle AGE -----------------------------------
+        */
         var dateOfPurchase = {!! json_encode($data->date) !!};
         var statusOfBike = {!! json_encode($data->status) !!};
         var yearOfPurchase = {!! json_encode($data->yearsBeforePurchase) !!};
         var currentYear = new Date();
         var date = currentYear.getFullYear();
         var ageOfBike;
-        if ( statusOfBike == 0 ){
+        if (statusOfBike == 0) {
             ageOfBike = dateOfPurchase + yearOfPurchase - date;
-        }
-        else if(statusOfBike == 1){
+        } else if (statusOfBike == 1) {
             ageOfBike = 0;
         }
-    /*
-    -------------------------------- Fetch selected EOD value and compare -----------------------------------
-    */
+        /*
+        -------------------------------- Fetch selected EOD value and compare -----------------------------------
+        */
         var eod;
         var eodRate = 0;
-        $('#eod').change(function(){
+        $('#eod').change(function () {
             eod = $(this).find(':selected').val();
-            if( eod == 0){
+            if (eod == 0) {
                 eodRate = 0;
-            }
-            else if(eod == 500){
+            } else if (eod == 500) {
                 eodRate = 10;
-            }
-            else if(eod == 1000){
+            } else if (eod == 1000) {
                 eodRate = 10;
-            }
-            else if(eod >= 1000){
+            } else if (eod >= 1000) {
                 eodRate = 20;
             }
         });
-    /*
-    -------------------------------- Other Rates -----------------------------------
-    */
+        /*
+        -------------------------------- Other Rates -----------------------------------
+        */
         var rsmtDamageAllRate = 0.025 / 100;
         var rsmtVehicleDamageRate = 0.15 / 100;
         var stampduty = 20;
 
-    /*
-    -------------------------------- Coverage Rate ----------------------------------
-    */
-        var driverCoverage = 500000;
-        var passangerCoverage = 500000;
     </script>
 @endsection

@@ -15,24 +15,14 @@
                             <nav>
                                 <ul id="navigation">
                                     <li><a href="/">home</a></li>
-                                    <li><a href="/twowheeler">Two-Wheeler</a></li>
-                                    <li><a href="/car">Car</a></li>
-                                    <li><a href="/about">about</a></li>
-                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="{{route('two-wheeler')}}">Two-Wheeler</a></li>
+                                    <li><a href="{{route('car')}}">Car</a></li>
+                                    <li><a href="{{route('about-us')}}">about</a></li>
+                                    <li><a href="{{route('contact-us')}}">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
-                    {{--<div class="col-xl-4 col-lg-4 d-none d-lg-block">
-                        <div class="Appointment">
-                            <div class="d-none d-lg-block">
-                                <a class="boxed-btn4" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </div>
-                            <div class="d-none d-lg-block">
-                                <a class="boxed-btn4" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </div>
-                        </div>
-                    </div>--}}
                 </div>
             </div>
         </div>

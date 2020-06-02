@@ -45,7 +45,7 @@
                                     <li> Compare quotes on your Bike </li>
                                 </ul>
                                 <div class="apply_btn">
-                                    <a class="boxed-btn3" href="/twowheeler">Get Quotes</a>
+                                    <a class="boxed-btn3" href="{{route('two-wheeler')}}">Get Quotes</a>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                                     <li> Compare Quotes on Car </li>
                                 </ul>
                                 <div class="apply_btn">
-                                    <a class="boxed-btn3" href="/car">Get Quotes</a>
+                                    <a class="boxed-btn3" href="{{route('car')}}">Get Quotes</a>
                                 </div>
                             </div>
                         </div>
@@ -93,36 +93,6 @@
                 </div>
             </div>
         </div>
-        <!-- service_area_end  -->
-
-        {{--<!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron" style="background-color:white;">
-            <hr>
-            <div class="container">
-                <h1 class="display-3" style="text-align: center;">Why choose us?</h1>
-                <div class="row">
-                    <div class="col-md-4">
-                        <h2>Save Time!</h2>
-                        <p>Save your valuable time by quickly comparing quotes with out the hassle of dealing with
-                            agents.</p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h2>Best Prices!</h2>
-                        <p>Our Comparision tool provides total transparency and lists the best price.</p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h2>Quick and Easy!</h2>
-                        <p>With our user friendly interface it is quick and easy to find the right policy for your
-                            automobile.</p>
-                    </div>
-                </div>
-                <!-- <p><a class="btn btn-primary btn-lg" href="/about" role="button">Learn more &raquo;</a></p> -->
-            </div>
-        </div>
-        <hr>
-    </div> --}}
         <div class="works_area">
             <div class="container">
                 <div class="row">

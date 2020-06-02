@@ -10,10 +10,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                <img src="../../dist/img/{{Auth::user()->avatar}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"> {{ Auth::user()->name }}</a>
+                <a href="{{route('profile')}}" class="d-block"> {{ Auth::user()->name }}</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -22,7 +22,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="/adminPanel" class="nav-link {{ (request()->segment(1) == 'home') ? 'active' : '' }}">
+                    <a href="/adminPanel" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('about') }}" class="nav-link {{ (request()->segment(2) == 'about') ? 'active' : '' }}">
+                    <a href="{{ route('about') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>About</p>
                     </a>
@@ -93,9 +93,15 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('company') }}" class="nav-link {{ (request()->segment(10) == 'company') ? 'active' : '' }}">
+                    <a href="{{ route('company') }}" class="nav-link">
                         <i class="nav-icon fas fa-building"></i>
                         <p>Companies</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('premium') }}" class="nav-link">
+                        <i class="nav-icon fas fa-money-bill"></i>
+                        <p>Premiums</p>
                     </a>
                 </li>
             </ul>

@@ -20,12 +20,12 @@ Route::get('/', function () {
 Route::group(['namespace' => 'Frontend'], function () {
     //Pages
     Route::get('/', 'FrontendController@index')->name('index');
-    Route::get('twowheeler', 'FrontendController@twowheeler')->name('two-wheeler');
-    Route::get('car', 'FrontendController@car')->name('car');
+    Route::get('twowheeler/quotes-form', 'FrontendController@twowheeler')->name('two-wheeler');
+    Route::get('car/quotes-form', 'FrontendController@car')->name('car');
     Route::get('about', 'FrontendController@about')->name('about-us');
     Route::get('contact', 'FrontendController@contact')->name('contact-us');
     Route::get('quotes/enquiry_{id}', 'FrontendController@preview')->name('company-list');
-    Route::get('display/{id}', 'FrontendController@display')->name('display-list');
+    Route::get('display/{id}/{user}', 'FrontendController@display')->name('display-list');
 
     Route::get('getTypes', 'FrontendController@getTypes');
     Route::get('getVariants', 'FrontendController@getVariants');
@@ -39,8 +39,14 @@ Route::group(['namespace' => 'Frontend'], function () {
   BACKEND CONTROLLERS
 ----------------------*/
 
-Route::group(['namespace' => 'Backend','middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Backend','middleware' => 'auth','middleware' => 'verified'], function () {
+
     Route::get('adminPanel', 'BackendController@index')->name('dashboard');
+
+    /*User Profile*/
+    Route::get('adminPanel/userProfile','userController@index')->name('profile');
+    Route::post('adminPanel/userProfile','userController@update_avatar')->name('update-avatar');
+    Route::post('adminPanel/changePassword','userController@changePassword')->name('update-password');
 
     /*About Page*/
     Route::get('adminPanel/about', 'aboutController@index')->name('about');
@@ -48,6 +54,22 @@ Route::group(['namespace' => 'Backend','middleware' => 'auth'], function () {
     Route::post('adminPanel/about/store', 'AboutController@store')->name('store-about');
     Route::get('adminPanel/about/update/{id}', 'AboutController@edit')->name('edit-about');
     Route::post('adminPanel/about/update/{id}', 'AboutController@update')->name('update-about');
+
+    /*Company Pages*/
+    Route::get('adminPanel/company', 'CompaniesController@index')->name('company');
+    Route::get('adminPanel/company/add', 'CompaniesController@create')->name('add-company');
+    Route::post('adminPanel/company/store', 'CompaniesController@store')->name('store-company');
+    Route::get('adminPanel/company/update/{id}', 'CompaniesController@edit')->name('edit-company');
+    Route::post('adminPanel/company/update/{id}', 'CompaniesController@update')->name('update-company');
+    Route::post('adminPanel/company/delete/{id}', 'CompaniesController@destroy')->name('delete-company');
+
+    /*Premium Pages*/
+    Route::get('adminPanel/premium','PremiumController@index')->name('premium');
+    Route::get('adminPanel/premium/add','PremiumController@create')->name('add-premium');
+    Route::post('adminPanel/premium/store','PremiumController@store')->name('store-premium');
+    Route::get('adminPanel/premium/update/{id}', 'PremiumController@edit')->name('edit-premium');
+    Route::post('adminPanel/premium/update/{id}', 'PremiumController@update')->name('update-premium');
+    Route::post('adminPanel/premium/delete/{id}', 'PremiumController@destroy')->name('delete-premium');
 
     /*----------------------
     BIKE BACKEND CONTROLLERS
@@ -111,15 +133,8 @@ Route::group(['namespace' => 'Backend','middleware' => 'auth'], function () {
 
     Route::get('getModel', 'CarVariantController@getModel');
 
-    /*Company Pages*/
-    Route::get('adminPanel/company', 'CompaniesController@index')->name('company');
-    Route::get('adminPanel/company/add', 'CompaniesController@create')->name('add-company');
-    Route::post('adminPanel/company/store', 'CompaniesController@store')->name('store-company');
-    Route::get('adminPanel/company/update/{id}', 'CompaniesController@edit')->name('edit-company');
-    Route::post('adminPanel/company/update/{id}', 'CompaniesController@update')->name('update-company');
-    Route::post('adminPanel/company/delete/{id}', 'CompaniesController@destroy')->name('delete-company');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'Backend\BackendController@index')->name('home');

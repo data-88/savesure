@@ -44,6 +44,10 @@ class aboutController extends Controller
      */
     public function store(Request $request)
     {
+        $valid = $request->validate([
+           'txtmain' => 'required | max:255',
+            'txtdesc' => 'required',
+        ]);
         if ($request->get('txtmain') == '' || $request->get('txtdesc') == '') {
             return redirect()->route('add-about')->with('error', 'Please! Some fields are missing...');
         } else {
@@ -93,6 +97,10 @@ class aboutController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $valid = $request->validate([
+            'txtmain' => 'required | max:255',
+            'txtdesc' => 'required',
+        ]);
         $update = [
             'main_text' => $request->get('txtmain'),
             'about_text' => $request->get('txtdesc'),

@@ -16,11 +16,11 @@
     <!--/ bradcam_area  -->
     <!-- apply_form_area -->
     <div class="apply_form_area">
-        @csrf
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <form action="#" class="apply_form">
+                <div class="col-lg-6">
+                    <form action="/create" class="apply_form" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="apply_info_text text-center">
@@ -28,52 +28,92 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="single_field">
-                                    <input type="text" placeholder="Your name">
+                                <div class="form-group">
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Your name">
+                                    @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="single_field">
-                                    <input type="text" placeholder="Email">
+                                <div class="form-group">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Email">
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="single_field">
-                                    <input type="text" placeholder="Phone no.">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-2"><input type="text" class="form-control" value="+977" disabled style="width: 60px;"></div>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" id="phone" value="{{  old('phone') }}" placeholder="Phone no.">
+                                            @error('phone')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                            @enderror
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6" style="margin-bottom:13px">
-                                <div class="single_field">
-                                    <select  class="wide form-control" name="brand" id="brand" required>
+                                <div>
+                                    <select name="brand" id="brand" class="form-control @error('brand') is-invalid @enderror" >
                                         <option value="" disabled="true" selected="true">Select Brand</option>
                                         @foreach($brands as  $key => $value)
                                             <option value="{{ $key }}">{{$value}}</option>
                                         @endforeach
                                     </select>
+                                    @error('brand')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="single_field">
-                                    <select name="type" id="type" class="wide form-control" required>
+                                <div>
+                                    <select name="type" id="type" class="wide form-control @error('type') is-invalid @enderror" >
                                         <option value="0" disabled="true" selected="true">Select Model</option>
                                     </select>
+                                    @error('type')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6" style="margin-bottom:13px">
-                                <div class="single_field">
-                                    <select name="variant" id="variant" class="wide form-control" required>
+                                <div>
+                                    <select name="variant" id="variant" class="wide form-control @error('variant') is-invalid @enderror" >
                                         <option value="">Select Variant</option>
                                     </select>
+                                    @error('variant')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="single_field">
-                                    <select name="date" class="Wide form-control" required>
+                                <div>
+                                    <select name="date" class="wide form-control @error('date') is-invalid @enderror">
                                         <option value="">Year Of Purchase</option>
                                         @for($year=2010; $year<=date('Y'); $year++){ ?>
                                         <option value="{{ $year }}">{{ $year }}</option>
                                         @endfor
                                     </select>
+                                    @error('date')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -107,56 +147,6 @@
         </div>
     </div>
     <!--/ apply_form_area -->
-{{--
-    --}}{{--Javascript with ajax for dynamic dropdown brand-type--}}{{--
-    <script type="text/javascript">
-        $('#brand').change(function () {
-            var brandID = $(this).val();
-            if (brandID) {
-                $.ajax({
-                    type: 'GET',
-                    url: '{{url('getTypes')}}?brand_id=' + brandID,
-                    success: function (res) {
-                        if (res) {
-                            $('#type').empty();
-                            $('#type').append('<option>Select Model</option>');
-                            $.each(res, function (key, value) {
-                                $('#type').append('<option value="' + key + '">' + value + '</option>');
-                            });
-                        } else {
-                            $('#type').empty();
-                        }
-                    }
 
-                });
-            } else {
-                $('#type').empty();
-                $('#variant').empty();
-            }
-        });
-
-        --}}{{--Javascript with ajax for dynamic dropdown type-variants--}}{{--
-        $('#type').on('change', function () {
-            var typeID = $(this).val();
-            if (typeID) {
-                $.ajax({
-                    type: 'GET',
-                    url: '{{url('getVariants')}}?type_id=' + typeID,
-                    success: function (res) {
-                        if (res) {
-                            $('#variant').empty();
-                            $('#variant').append('<option>Select Variant</option>');
-                            $.each(res, function (key, value) {
-                                $('#variant').append('<option value="' + key + '">' + value + '</option>');
-                            });
-                        } else {
-                            $('#variant').empty();
-                        }
-                    }
-                });
-            } else {
-                $('#variant').empty();
-            }
-        });
-    </script>--}}
 @endsection
+

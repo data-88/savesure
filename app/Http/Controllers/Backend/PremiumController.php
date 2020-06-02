@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Brand;
 use App\Http\Controllers\Controller;
+use App\Premium;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class BikeBrandsController extends Controller
+class PremiumController extends Controller
 {
-    protected $pages = 'Backend.pages.bike.brand.';
+    protected $pages = 'Backend.pages.premium.';
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +16,8 @@ class BikeBrandsController extends Controller
      */
     public function index()
     {
-        $brands = Brand::where('category_id', 1)->get();
-        return view($this->pages. 'home', ['brands'=>$brands]);
+        $premuim = Premium::get();
+        return view($this->pages . 'home',['premium'=>$premuim]);
     }
 
     /**
@@ -28,7 +27,7 @@ class BikeBrandsController extends Controller
      */
     public function create()
     {
-        return view($this->pages. 'add');
+        return view($this->pages . 'add');
     }
 
     /**
@@ -39,16 +38,14 @@ class BikeBrandsController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = request()->validate([
-           'name' => 'required | unique:brands| alpha | max:255'
-        ]);
+        $data = new Premium();
+        $data->min_cc = request('min');
+        $data->max_cc = request('max');
+        $data->amount = request('amt');
 
-        $data = new Brand();
-        $data->name = request('name');
-        $data->category_id = 1;
         $data->save();
 
-        return redirect()->route('brands')->with('status','Brand Successfully Added');
+        return redirect()->route('premium')->with('status','Premium Successfully Added');
     }
 
     /**
@@ -70,8 +67,8 @@ class BikeBrandsController extends Controller
      */
     public function edit($id)
     {
-        $brands = Brand::findorFail($id);
-        return view($this->pages. 'update',['brands'=>$brands]);
+        $premium = Premium::findorFail($id);
+        return view($this->pages. 'update',['premium'=>$premium]);
     }
 
     /**
@@ -83,11 +80,15 @@ class BikeBrandsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $brands = Brand::find($id);
-        $brands->name = $request->input('name');
-        $brands->update();
+        $premium = Premium::find($id);
 
-        return redirect()->route('brands')->with('status','Brand Successfully Updated');
+        $premium->min_cc = request('min');
+        $premium->max_cc = request('max');
+        $premium->amount = request('amt');
+
+        $premium->update();
+        return redirect()->route('premium')->with('status','Premium Successfully Updated');
+
     }
 
     /**
@@ -98,10 +99,9 @@ class BikeBrandsController extends Controller
      */
     public function destroy($id)
     {
-        $brands = Brand::findorFail($id);
-        $brands->delete();
+        $premium = Premium::findorFail($id);
+        $premium->delete();
 
-        return redirect()->route('brands')->with('status','Brand Successfully Deleted.');
-
+        return redirect()->route('premium')->with('status', 'Premium Successfully Deleted.');
     }
 }

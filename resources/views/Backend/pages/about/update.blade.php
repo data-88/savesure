@@ -33,7 +33,12 @@
                             <div class="form-group">
                                 <div class="form-line">
                                     <textarea name="txtmain" maxlength="500" id="editor2"
-                                              class="form-control">{{ $abouts->main_text }}</textarea>
+                                              class="form-control @error('txtmain') is-invalid @enderror">{{ $abouts->main_text }}</textarea>
+                                    @error('txtmain')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -41,7 +46,12 @@
                             <div class="form-group">
                                 <div class="form-line">
                                      <textarea name="txtdesc" id="editor1"
-                                               class="textarea">{{ $abouts->about_text }}</textarea>
+                                               class="textarea @error('txtdesc') is-invalid @enderror">{{ $abouts->about_text }}</textarea>
+                                    @error('txtdesc')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>

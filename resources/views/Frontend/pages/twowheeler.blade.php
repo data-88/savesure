@@ -1,69 +1,6 @@
 @extends('Frontend.master')
 
 @section('content')
-    {{--    Form section for bike insurance that collects the vehicle details of user--}}
-    {{--<div class="container">
-        <form class="form-style-9">
-            <h2>Vehicle Detail</h2>
-            <ul>
-                <div>
-                    <li>
-                        <input type="text" name="fname" class="field-style field-split align-left" placeholder="First Name"
-                            required />
-                        <input type="text" name="lname" class="field-style field-split align-right" placeholder="Last Name"
-                            required />
-                    </li>
-                    <li>
-                        <input type="text" name="phone" class="field-style field-split align-left" placeholder="Phone" />
-                        <input type="email" name="email" class="field-style field-split align-right" placeholder="Email" />
-                    </li>
-                </div>
-                <div>
-                    <li>
-                        <select name="brand" id="brand" class="field-style field-split align-left" required>
-                            <option value="" disabled="true" selected="true">Select Brand</option>
-                            --}}{{--Loop through brand table to display brand names--}}{{--
-                            @foreach($brands as  $key => $value)
-                                <option value="{{ $key }}">{{$value}}</option>
-                            @endforeach
-                        </select>
-
-                        <select name="type" id="type" class="field-style field-split align-right" required>
-                            <option value="0" disabled="true" selected="true">Select Model</option>
-                        </select>
-                    </li>
-                </div>
-
-                <div>
-                    <li>
-                        <select name="variant" id="variant" class="field-style field-split align-left" required>
-                            <option value="">Select Variant</option>
-                        </select>
-
-                        <select name="date" class="field-style field-split align-right" required>
-                            <option value="">Year Of Purchase</option>
-                            @for($year=1967; $year<=date('Y'); $year++){ ?>
-                            <option value="{{ $year }}">{{ $year }}</option>
-                            @endfor
-                        </select>
-                    </li>
-                </div>
-
-                <div>
-                    <li>
-                        <p>This Vehicle is?</p>
-                        <input type="radio" name="status" value='old' checked> Old
-                        <input type="radio" name="status" value='new'> Brand New
-                    </li>
-                </div>
-                <div class="col-xs-4">
-                    <li>
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Continue</button>
-                    </li>
-                </div>
-            </ul>
-        </form>
-    </div>--}}
     <!-- bradcam_area  -->
     <div class="bradcam_area bradcam_bg_3">
         <div class="container">
@@ -81,7 +18,16 @@
     <div class="apply_form_area">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-6">
+                    {{--@if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif--}}
                     <form action="/create" class="apply_form" method="post">
                         @csrf
                         <div class="row">
@@ -91,52 +37,92 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="single_field">
-                                    <input type="text" name="name" id="name" placeholder="Your name">
+                                <div class="form-group">
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{  old('name') }}" placeholder="Your name">
+                                    @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="single_field">
-                                    <input type="email" name="email" id="email" placeholder="Email">
+                                <div class="form-group">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{  old('email') }}" placeholder="Email">
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="single_field">
-                                    <input type="number" name="phone" id="phone" placeholder="Phone no.">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-2"><input type="text" class="form-control" value="+977" disabled style="width: 60px;"></div>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" id="phone" value="{{  old('phone') }}" placeholder="Phone no.">
+                                            @error('phone')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                            @enderror
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6" style="margin-bottom:13px">
                                 <div>
-                                    <select name="brand" id="brand" class=" form-control">
+                                    <select name="brand" id="brand" class="form-control @error('brand') is-invalid @enderror" >
                                         <option value="" disabled="true" selected="true">Select Brand</option>
                                         @foreach($brands as  $key => $value)
                                             <option value="{{ $key }}">{{$value}}</option>
                                         @endforeach
                                     </select>
+                                    @error('brand')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div>
-                                    <select name="type" id="type" class="wide form-control">
+                                    <select name="type" id="type" class="wide form-control @error('type') is-invalid @enderror" >
                                         <option value="0" disabled="true" selected="true">Select Model</option>
                                     </select>
+                                    @error('type')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6" style="margin-bottom:13px">
                                 <div>
-                                    <select name="variant" id="variant" class="wide form-control">
+                                    <select name="variant" id="variant" class="wide form-control @error('variant') is-invalid @enderror" >
                                         <option value="">Select Variant</option>
                                     </select>
+                                    @error('variant')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div>
-                                    <select name="date" class="wide form-control">
+                                    <select name="date" class="wide form-control @error('date') is-invalid @enderror">
                                         <option value="">Year Of Purchase</option>
                                         @for($year=2010; $year<=date('Y'); $year++){ ?>
                                         <option value="{{ $year }}">{{ $year }}</option>
                                         @endfor
                                     </select>
+                                    @error('date')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-12">

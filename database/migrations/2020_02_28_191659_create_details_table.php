@@ -21,6 +21,7 @@ class CreateDetailsTable extends Migration
             $table->integer('brand_id');
             $table->integer('type_id');
             $table->integer('variant_id');
+            $table->integer('company_id');
             $table->integer('date');
             $table->integer('status');
             $table->integer('yearsBeforePurchase');

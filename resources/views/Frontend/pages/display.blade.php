@@ -28,7 +28,7 @@
                     <h6>Bike Variant: {{ $data->variant_name }} </h6>
                 </div>
                 <div class="col col-md-3" style="text-align: center; margin-top: 25px">
-                    <h6>Premium: रू <span id="ccPrem"></span></h6>
+                    <h6>Premium: रू <span id="ccPrem">{{request('userValue') ?? '' }}</span></h6>
                 </div>
                 <div class="col-md-3" style="text-align: center; margin-top: 25px">
                     <h6>Registration Date: {{ $data->date }}</h6>

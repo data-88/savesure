@@ -39,6 +39,8 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ URL::asset('dist/js/pages/dashboard.js') }}"></script>
 
+@yield('js_content')
+
 {{--<script type="text/javascript">
     $("#brand").change(function () {
         var brandID = $(this).val();
