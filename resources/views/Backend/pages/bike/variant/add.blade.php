@@ -42,26 +42,46 @@
                         <div class="card-body">
                             <div>
                                 <label for="bikeBrand">Brand</label>
-                                <select name="bikeBrand" id="bikeBrand" class="form-control">
+                                <select name="bikeBrand" id="bikeBrand" class="form-control @error('bikeBrand') is-invalid @enderror">
                                     <option value="" selected="true" disabled>Select Brand</option>
                                     @foreach($brands as  $key => $value)
                                         <option value="{{ $key }}">{{$value}}</option>
                                     @endforeach
                                 </select>
+                                @error('bikeBrand')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                             <div>
                                 <label for="bikeModel">Model</label>
-                                <select name="bikeModel" id="bikeModel" class="form-control">
+                                <select name="bikeModel" id="bikeModel" class="form-control @error('bikeModel') is-invalid @enderror">
                                     <option value="0" selected="true" disabled>Select Model</option>
                                 </select>
+                                @error('bikeModel')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="inputName">Variant Name</label>
-                                <input type="text" name="name" id="inputName" class="form-control" placeholder="Name">
+                                <input type="text" name="name" id="inputName" class="form-control @error('name') is-invalid @enderror" placeholder="Name">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="inputName">Variant CC</label>
-                                <input type="number" name="cc" id="inputCC" class="form-control" placeholder="Variant CC">
+                                <input type="number" name="cc" id="inputCC" class="form-control @error('cc') is-invalid @enderror" placeholder="Variant CC">
+                                @error('cc')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                         </div>
                         <!-- /.card-body -->

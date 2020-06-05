@@ -68,7 +68,7 @@
             {{--Company Display Section--}}
             <div class="col col-lg-10 col-md-9 col-sm-12">
                 <div class="row">
-                    @foreach ($company as $company)
+                    @foreach ($companies as $company)
                         <div class="col col-md-4 col-sm-6 col-xs-12" style="text-align: center; padding-bottom: 10px">
                             <div class="card">
                                 <div class="card-body">
@@ -85,8 +85,8 @@
                                     <br>
                                     <br>
                                     <button
-                                        data-url="{{ route('display-list',['id'=>$company->id,'user'=>$data->id]) }}?userValue=%userValue%"
-                                        class="genric-btn success-border medium company-redirect" id="btn-send">
+                                        class="genric-btn success-border medium company-redirect" id="btn-send"
+                                        data-toggle="modal" data-target="#breakdown-{{$company->id}}">
                                         रू <span class="ccPrem2">{{$ccAmt}}</span>
                                     </button>
                                 </div>
@@ -98,7 +98,63 @@
         </div>
     </div>
 
-
+@foreach($companies as $company)
+    <div class="modal fade"  id="breakdown-{{$company->id}}"" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Company Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-3">
+                            <img class="company_image offset-1"
+                                 src="{{ asset('img/Companies/'.$company->image) }}" alt="Company Image">
+                            <h5 class="card-title">{{ $company->name}}</h5>
+                            <h6>{{ $company->location }}</h6>
+                            <h6>{{ $company->phone }}</h6>
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5">
+                            <p>Premium Break Down</p>
+                            <hr>
+                            <h6 class="offset-3">{{ $data->brand_name }} {{ $data->type_name }} {{ $data->variant_name }}</h6>
+                            <h6 class="offset-3 brkComp" style="display: none;">Sum Assured:
+                                <input class="brkComp" type="text" id="idv" readonly
+                                        style="border:0;width: 75px;display: none;" value="रू 50000"></h6>
+                            <div class="row">
+                                <div class="column">
+                                    <h6 class="brkComp" style="display: none;">Comprehensive Premium</h6>
+                                    <h6>Third Party Premium</h6>
+                                    <h6 class="brkComp" style="display: none;">Riot/Strike/Terrorism Damage</h6>
+                                    <h6 class="brkComp" style="display: none;">Excess Own Damage</h6>
+                                    <h6 class="brkPax" style="display: none;">Pax Premium </h6>
+                                    <h6>Total Premium</h6>
+                                </div>
+                                <div class="column">
+                                    <h6 class="brkComp" style="display: none;">: NPR <span class="normalPrem">0</span></h6>
+                                    <h6>: NPR <span>{{$ccAmt}}</span></h6>
+                                    <h6 class="brkComp" style="display: none;">: NPR <span class="rsmt-brk">0</span></h6>
+                                    <h6 class="brkComp" style="display: none;">: NPR <span class="eod-brk">0</span></h6>
+                                    <h6 class="brkPax" style="display: none;">: NPR <span class="pax-prem">0</span></h6>
+                                    <h6>: NPR <span class="ccPrem2">{{$ccAmt}}</span></h6>
+                                </div>
+                            </div>
+                            <p>The Premium is subjected to 13% VAT.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div id="map" style="height: 400px; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
 @endsection
 
 @section('js_content')
@@ -119,28 +175,23 @@
             ageOfBike = 0;
         }
         /*
-        -------------------------------- Fetch selected EOD value and compare -----------------------------------
-        */
-        var eod;
-        var eodRate = 0;
-        $('#eod').change(function () {
-            eod = $(this).find(':selected').val();
-            if (eod == 0) {
-                eodRate = 0;
-            } else if (eod == 500) {
-                eodRate = 10;
-            } else if (eod == 1000) {
-                eodRate = 10;
-            } else if (eod >= 1000) {
-                eodRate = 20;
-            }
-        });
-        /*
         -------------------------------- Other Rates -----------------------------------
         */
         var rsmtDamageAllRate = 0.025 / 100;
         var rsmtVehicleDamageRate = 0.15 / 100;
-        var stampduty = 20;
 
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 27.717245, lng: 85.323959},
+                zoom: 14
+            });
+            var marker = new google.maps.Marker({
+                position: {lat: 27.707798, lng: 85.318444},
+                map:map
+            })
+        }
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlONgy8QxbiKqd2ycO3bQq5EUv9Zj4JZU&callback=initMap"
+            async defer></script>
 @endsection

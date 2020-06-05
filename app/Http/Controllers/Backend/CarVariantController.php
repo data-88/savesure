@@ -72,10 +72,16 @@ class CarVariantController extends Controller
      */
     public function store(Request $request)
     {
+        $validateData = request()->validate([
+            'carBrand' => 'required',
+            'carModel' => 'required',
+            'name' => 'required | unique:variants',
+            'cc' => 'required | numeric',
+        ]);
         $data = new Variant();
         $data->category_id = 2;
-        $data->brand_id = request('bikeBrand');
-        $data->type_id = request('bikeModel');
+        $data->brand_id = request('carBrand');
+        $data->type_id = request('carModel');
         $data->name = request('name');
         $data->vehicle_cc = request('cc');
 
@@ -128,10 +134,17 @@ class CarVariantController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validateData = request()->validate([
+            'carBrand' => 'required',
+            'carModel' => 'required',
+            'name' => 'required | unique:variants',
+            'cc' => 'required | numeric',
+        ]);
+
         $variant = Variant::find($id);
         $variant->name = $request->input('name');
-        $variant->brand_id = request('bikeBrand');
-        $variant->type_id = request('bikeModel');
+        $variant->brand_id = request('carBrand');
+        $variant->type_id = request('carModel');
         $variant->vehicle_cc = request('cc');
         $variant->update();
 

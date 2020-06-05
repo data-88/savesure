@@ -114,7 +114,7 @@ class FrontendController extends Controller
             )
             ->where('details.id', $id)->first();
 
-        $company = Company::get();
+        $companies = Company::get();
         $premium = Premium::get();
 
         $ccData = $data->val_cc;
@@ -125,41 +125,6 @@ class FrontendController extends Controller
             }
         }
 
-        return view($this->pages . 'preview')
-            ->with(['data' => $data])
-            ->with(['company' => $company])
-            ->with(['ccAmt' => $ccAmt]);
-    }
-
-    public function display($id,$user)
-    {
-        // Joining brand table, type table, variant table with detail table.
-        $data = DB::table('details')
-            ->join('brands', 'brands.id', 'details.brand_id')
-            ->leftjoin('types', 'types.id', 'details.type_id')
-            ->leftjoin('variants', 'variants.id', 'details.variant_id')
-            ->leftjoin('companies', 'companies.id', 'details.company_id')
-            ->select(
-                'details.id', 'details.name', 'details.email', 'details.phone', 'details.date', 'details.status','details.yearsBeforePurchase',
-                'details.brand_id', 'brands.name as brand_name',
-                'details.type_id', 'types.name as type_name',
-                'details.variant_id', 'variants.name as variant_name', 'variants.vehicle_cc as val_cc'
-            )
-            ->where('details.id', $user)->first();
-
-        $company = Company::findorFail($id);
-        $premium = Premium::get();
-
-        /*$ccData = $data->val_cc;
-        $ccAmt = 0;
-        foreach ($premium as $premium) {
-            if ($ccData >= $premium->min_cc & $ccData <= $premium->max_cc) {
-                $ccAmt = $premium->amount;
-            }
-        }*/
-
-        return view($this->pages . 'display')
-            ->with(['data' => $data])
-            ->with(['company' => $company]);
+        return view($this->pages . 'preview', compact (['data', 'companies', 'ccAmt']));
     }
 }

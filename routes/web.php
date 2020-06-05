@@ -25,7 +25,6 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('about', 'FrontendController@about')->name('about-us');
     Route::get('contact', 'FrontendController@contact')->name('contact-us');
     Route::get('quotes/enquiry_{id}', 'FrontendController@preview')->name('company-list');
-    Route::get('display/{id}/{user}', 'FrontendController@display')->name('display-list');
 
     Route::get('getTypes', 'FrontendController@getTypes');
     Route::get('getVariants', 'FrontendController@getVariants');

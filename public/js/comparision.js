@@ -38,48 +38,15 @@ $(document).ready(function () {
 
     var riotdamageall = (driverCoverage + passangerCoverage) * rsmtDamageAllRate;                                       /*Riot Damage to Passengers and Driver compensation price to add into premium.*/
     var riotVehicleDamage;
+    var RSMT;
     var bikePremium;
-    var price;
 
-
-    var userValue = $('#ccPrem').text();
-
-    function updateUserValue(val){
-        userValue = val;
-    }
-    //Passing Value to another page through URL
-    $(document).ready(function () {
-        $('.company-redirect').on('click',function (e) {
-            let item = $(e.target);
-            let url = item.data('url');
-            if (url === undefined){
-                url = item.parent().data('url');
-            }
-            url = url.replace('%userValue%',userValue);
-            window.location.href=url
-        })
-    });
-
-    /*var ui_amount_data = $('#amount').text();
-
-    function updateUiValue(uiVal){
-        ui_amount_data = uiVal;
-    }
-    $(document).ready(function () {
-        $('.company-redirect').on('click',function (e) {
-            let item = $(e.target);
-            let url = item.data('url');
-            if (url === undefined){
-                url = item.parent().data('url');
-            }
-            url = url.replace('%ui_amount_data%',ui_amount_data);
-            window.location.href=url
-        })
-    });*/
+    var brkPrem;
 
     //Slider Initialization
     $(document).on('click', '.full_coverage', function () {
         $('.firstpartyform').toggle();
+        $('.brkComp').toggle();
         var last = 0;
         $("#slider").slider({
             value: 50000,
@@ -88,36 +55,41 @@ $(document).ready(function () {
             step: 1000,
             slide: function (event, ui) {
                 $("#amount").val("रू" + ui.value);
-                /*updateUiValue(ui.value);*/
+                $("#idv").val("रू" + ui.value);
+
                 var bikePremium1 = ui.value * 1.5 / 100;
-                var bikepremium2;                                                                                       /*Calculation the bike premium rate according to how old the bike is*/
+
+                brkPrem = bikePremium1 >= 1000 ? bikePremium1 : 1000;
+
+                $(".normalPrem").text(brkPrem);
+                console.log('bikeprem1 : '+bikePremium1);
+                var bikepremium2 = 0;                                                                                       /*Calculation the bike premium rate according to how old the bike is*/
                 if (ageOfBike < 5)
                     bikepremium2 = 0;
                 else if (ageOfBike <= 10 ){
                     bikepremium2 = 0.15 * bikePremium1;
                 }
-                else {
+                else if (ageOfBike < 10) {
                     bikepremium2 = 0.25 * bikePremium1;
                 }
-                /*console.log('aob: '+ ageOfBike);*/
-                bikePremium = bikePremium1 + bikepremium2;
-                /*console.log("Premium: " + bikePremium);*/
-                /*var excessOwnDamage = bikePremium * eodRate / 100;                                                    /!*Excess Own Damage Calculation.*!/
-                console.log("eod: " + excessOwnDamage);
-                var result1 = bikePremium - excessOwnDamage;
-                console.log('result 1: ' + result1);*/
 
-                var normalPremium = bikePremium >= 1000 ? bikePremium : 1000;                                           /*If bikePremium is less than 1000 then bikePremium value is 1000*/
-                /*console.log('Normal: '+ normalPremium);*/
+                bikePremium = bikePremium1 + bikepremium2;
+
+                var excessOwnDamage = bikePremium * 10 / 100;                                                          /*Excess Own Damage Calculation.*/
+                $(".eod-brk").text(excessOwnDamage);
+
+                var result1 = bikePremium - excessOwnDamage;
+
+                var normalPremium = result1 >= 1000 ? result1 : 1000;                                                   /*If bikePremium is less than 1000 then bikePremium value is 1000*/
                 riotVehicleDamage = ui.value * rsmtVehicleDamageRate;                                                   /*Calculating RiotVehicleDamage Price according to the current ui.Value selected which is also the Sum Insured.*/
-                /*console.log("rvd: " + riotVehicleDamage);*/
-                /*console.log("rda: " + riotdamageall);*/
+                RSMT = riotdamageall + riotVehicleDamage;
+                $('.rsmt-brk').text(RSMT);
+
                 if (ui.value > last) {
                     if (ui.value >= 50000){
                         thirdPartyAmount = thirdPartyLiability + normalPremium + riotVehicleDamage + riotdamageall;
                         $("#ccPrem").text(thirdPartyAmount);
                         $(".ccPrem2").text(thirdPartyAmount);
-                        updateUserValue(thirdPartyAmount);
                     }
                 }
                 if (ui.value < last){
@@ -125,53 +97,57 @@ $(document).ready(function () {
                         thirdPartyAmount = thirdPartyLiability + normalPremium + riotVehicleDamage + riotdamageall;
                         $("#ccPrem").text(thirdPartyAmount);
                         $(".ccPrem2").text(thirdPartyAmount);
-                        updateUserValue(thirdPartyAmount);
                     }
                     if (ui.value <= 50000){
                         thirdPartyAmount = thirdPartyLiability + normalPremium + riotVehicleDamage + riotdamageall;
                         $("#ccPrem").text(thirdPartyAmount);
                         $(".ccPrem2").text(thirdPartyAmount);
-                        updateUserValue(thirdPartyAmount);
                     }
                 }
                 last = ui.value;
             }
         });
-        price = $("#amount").val("रू" + $("#slider").slider("value"));
-        /*updateUiValue(price);*/
+        $("#amount").val("रू" + $("#slider").slider("value"));
 
         if (document.getElementById('full_coverage').checked) {                                               /*Change Function if Comprehensive is Checked.*/
             document.getElementById("rsmt_div").style.marginTop = "100px";                                    /*Adding Style Margin to RSMT Division.*/
             document.getElementById("rsmt").disabled = true;                                                  /*Disabling the RSMT Checkbox when Comprehensive is checked.*/
-            /*document.getElementById("eoDiv").style.visibility = "visible";*/                                          /*Displaying EOD Select Menue.*/
+
             riotVehicleDamage = 50000 * 0.0015;                                                                         /*RSMT value for Riot to calculate premium when Comprehensive is checked.*/
+
             $('.firstcheck').addClass('fa-check');                                                               /*Adding Check Mark Class.*/
             $('.firstcheck').removeClass('fa-times');                                                            /*Removing Cross Mark Class.*/
+
             thirdPartyAmount = thirdPartyLiability + 1000 + riotVehicleDamage + riotdamageall;                          /*Calculation for static premium on first click.*/
             $("#ccPrem").text(thirdPartyAmount);                                                                 /*Passing value as a text to div with ID ccPrem.*/
             $(".ccPrem2").text(thirdPartyAmount);
-            updateUserValue(thirdPartyAmount);
+            $(".normalPrem").text('1000');
+            $('.rsmt-brk').text('325');
+            $(".eod-brk").text('75');
         } else {
             document.getElementById("rsmt_div").style.marginTop = "0px";
             document.getElementById("rsmt").disabled = false;
-            /*document.getElementById("eoDiv").style.visibility = "hidden";*/
+
             $('.firstcheck').removeClass('fa-check');
             $('.firstcheck').addClass('fa-times');
+
             $("#ccPrem").text(thirdPartyLiability);
             $(".ccPrem2").text(thirdPartyLiability);
-            updateUserValue(thirdPartyAmount);
+            $(".normalPrem").text('0');
         }
     });
     /*
      =============================== RSMT For Third Party =================================
     */
     $(document).on('click', '.rsmt-coverage', function (){
+        $('.brkPax').toggle();
         if (document.getElementById('rsmt').checked){
             var PaxPremium = 2 * 125;                                                                                   /*It is a RSMT charge for Third Party Coverage.*/
             var TotalThirdParty = thirdPartyLiability + PaxPremium;
             $("#ccPrem").text(TotalThirdParty);
             $(".ccPrem2").text(TotalThirdParty);
-            updateUserValue(TotalThirdParty);
+            $('.pax-prem').text(PaxPremium);
+
             console.log(TotalThirdParty);
         }
         else {

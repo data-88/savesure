@@ -34,20 +34,25 @@
                     @csrf
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Car Brand Name</h3>
+                            <h3 class="card-title">Edit Car Brand Name</h3>
                         </div>
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputName">Brand Name</label>
-                                <input type="text" name="name" id="inputName" class="form-control"
+                                <input type="text" name="name" id="inputName" class="form-control @error('name') is-invalid @enderror"
                                        value="{{$brands->name}}">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                         </div>
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
                     <a href="{{route('car-brands')}}" class="btn btn-secondary">Cancel</a>
-                    <input type="submit" value="Save Changes" class="btn btn-success">
+                    <input type="submit" value="Update Name" class="btn btn-success">
                 </form>
 
             </div>

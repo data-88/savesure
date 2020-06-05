@@ -62,21 +62,11 @@
 <!-- Latest compiled JavaScript -->
 <script src="{{ URL::asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')}}"></script>
 
-<!-- JS -->
-{{--<script src="{{ URL::asset('js/isotope.pkgd.min.js') }}"></script>
-<script src="{{ URL::asset('js/imagesloaded.pkgd.min.js') }}"></script>
-<script src="{{ URL::asset('js/wow.min.js') }}"></script>
-<script src="{{ URL::asset('js/nice-select.min.js') }}"></script>
-<script src="{{ URL::asset('js/jquery.slicknav.min.js') }}"></script>
-
-<script src="{{ URL::asset('js/main.js') }}"></script>--}}
-
 <script src="{{ URL::asset('https://code.jquery.com/ui/1.12.1/jquery-ui.js') }}"></script>
 
 <script src="{{ URL::asset('js/comparision.js') }}"></script>
 
 @yield('js_content')
-
 
 {{--Javascript with ajax for dynamic dropdown brand-type--}}
 <script type="text/javascript">

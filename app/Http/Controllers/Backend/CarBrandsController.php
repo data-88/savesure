@@ -81,6 +81,9 @@ class CarBrandsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validateData = request()->validate([
+            'name' => 'required | unique:brands'
+        ]);
         $brands = Brand::find($id);
         $brands->name = $request->input('name');
         $brands->update();

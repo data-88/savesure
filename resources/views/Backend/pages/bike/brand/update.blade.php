@@ -22,13 +22,6 @@
     <!-- Main content -->
     <section class="content">
         <div class="row justify-content-center">
-            {{--@if($errors->any())
-                <div class="alert alert-danger">
-                    @foreach($errors->all()as $error)
-                        <li>{{ $error  }}</li>
-                    @endforeach
-                </div>
-            @endif--}}
             <div class="col-md-6">
                 <form action="{{route('update-brands',['id'=>$brands->id])}}" method="post">
                     @csrf
@@ -39,8 +32,13 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputName">Brand Name</label>
-                                <input type="text" name="name" id="inputName" class="form-control"
+                                <input type="text" name="name" id="inputName" class="form-control @error('name') is-invalid @enderror"
                                        value="{{$brands->name}}">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                         </div>
                         <!-- /.card-body -->

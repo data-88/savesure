@@ -83,6 +83,9 @@ class BikeBrandsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validateData = request()->validate([
+            'name' => 'required | unique:brands| alpha | max:255'
+        ]);
         $brands = Brand::find($id);
         $brands->name = $request->input('name');
         $brands->update();

@@ -38,6 +38,12 @@ class PremiumController extends Controller
      */
     public function store(Request $request)
     {
+        $validateData = request()->validate([
+            'min' => 'required',
+            'max' => 'required',
+            'amt' => 'required',
+        ]);
+
         $data = new Premium();
         $data->min_cc = request('min');
         $data->max_cc = request('max');
@@ -80,6 +86,11 @@ class PremiumController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validateData = request()->validate([
+            'min' => 'required',
+            'max' => 'required',
+            'amt' => 'required',
+        ]);
         $premium = Premium::find($id);
 
         $premium->min_cc = request('min');

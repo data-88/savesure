@@ -42,7 +42,12 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputName">Car Brand Name</label>
-                                <input type="text" name="name" id="inputName" class="form-control" placeholder="Name">
+                                <input type="text" name="name" id="inputName" class="form-control  @error('name') is-invalid @enderror" placeholder="Name" value="{{  old('name') }}">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                         </div>
                         <!-- /.card-body -->

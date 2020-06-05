@@ -44,15 +44,30 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="minCC">Min CC</label>
-                                <input type="text" name="min" id="minCC" class="form-control" placeholder="0">
+                                <input type="text" name="min" id="minCC" class="form-control @error('min') is-invalid @enderror" placeholder="0">
+                                @error('min')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="maxCC">Max CC</label>
-                                <input type="text" name="max" id="maxCC" class="form-control" placeholder="150">
+                                <input type="text" name="max" id="maxCC" class="form-control @error('max') is-invalid @enderror" placeholder="150">
+                                @error('max')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="amt">Amount</label>
-                                <input type="text" name="amt" id="amt" class="form-control" placeholder="1500">
+                                <input type="text" name="amt" id="amt" class="form-control @error('amt') is-invalid @enderror" placeholder="1500">
+                                @error('amt')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                         </div>
                         <!-- /.card-body -->

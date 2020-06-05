@@ -65,7 +65,8 @@ class BikeModelController extends Controller
     public function store(Request $request)
     {
         $validateData = request()->validate([
-            'name' => 'required | unique:types'
+            'bikeBrand' => 'required',
+            'name' => 'required | unique:types',
         ]);
 
         $data = new Type();
@@ -110,6 +111,9 @@ class BikeModelController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validateData = request()->validate([
+            'name' => 'required | unique:types',
+        ]);
         $model = Type::find($id);
         $model->name = $request->input('name');
         $model->update();

@@ -58,9 +58,13 @@ class CarModelController extends Controller
      */
     public function store(Request $request)
     {
+        $validateData = request()->validate([
+            'carBrand' =>'required',
+            'name' => 'required | unique:types'
+        ]);
         $data = new Type();
         $data->category_id = 2;
-        $data->brand_id = request('bikeBrand');
+        $data->brand_id = request('carBrand');
         $data->name = request('name');
 
         $data->save();
@@ -100,11 +104,14 @@ class CarModelController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validateData = request()->validate([
+            'name' => 'required | unique:types',
+        ]);
         $model = Type::find($id);
         $model->name = $request->input('name');
         $model->update();
 
-        return redirect()->route('model')->with('status', 'Model Successfully Updated');
+        return redirect()->route('car-model')->with('status', 'Model Successfully Updated');
     }
 
     /**

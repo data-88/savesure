@@ -22,32 +22,30 @@
     <!-- Main content -->
     <section class="content">
         <div class="row justify-content-center">
-            {{--@if($errors->any())
-                <div class="alert alert-danger">
-                    @foreach($errors->all()as $error)
-                        <li>{{ $error  }}</li>
-                    @endforeach
-                </div>
-            @endif--}}
             <div class="col-md-6">
                 <form action="{{route('update-car-model',['id'=>$model->id])}}" method="post">
                     @csrf
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Bike Model Detail</h3>
+                            <h3 class="card-title">Car Model Detail</h3>
                         </div>
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputName">Model Name</label>
-                                <input type="text" name="name" id="inputName" class="form-control"
+                                <input type="text" name="name" id="inputName" class="form-control @error('name') is-invalid @enderror"
                                        value="{{$model->name}}">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                         </div>
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
                     <a href="{{route('car-model')}}" class="btn btn-secondary">Cancel</a>
-                    <input type="submit" value="Save Changes" class="btn btn-success">
+                    <input type="submit" value="Update Changes" class="btn btn-success">
                 </form>
 
             </div>

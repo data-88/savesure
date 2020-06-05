@@ -16,15 +16,11 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ URL::asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- ChartJS -->
-{{--<script src="{{ URL::asset('plugins/chart.js/Chart.min.js') }}"></script>--}}
 <!-- Sparkline -->
 <script src="{{ URL::asset('plugins/sparklines/sparkline.js') }}"></script>
 <!-- JQVMap -->
 <script src="{{ URL::asset('plugins/jqvmap/jquery.vmap.min.js') }}"></script>
 <script src="{{ URL::asset('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
-<!-- jQuery Knob Chart -->
-{{--<script src="{{ URL::asset('plugins/jquery-knob/jquery.knob.min.js') }}"></script>--}}
 <!-- daterangepicker -->
 <script src="{{ URL::asset('plugins/moment/moment.min.js') }}"></script>
 <script src="{{ URL::asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
@@ -40,41 +36,6 @@
 <script src="{{ URL::asset('dist/js/pages/dashboard.js') }}"></script>
 
 @yield('js_content')
-
-{{--<script type="text/javascript">
-    $("#brand").change(function () {
-        var brandID = $(this).val();
-        console.log('brandID : ' + brandID);
-        if (brandID) {
-            $.ajax({
-                type: 'GET',
-                url: '{{url('/adminPanel/getModel')}}?brand_id=' + brandID,
-                success: function (data) {
-                    console.log(data);
-                    var dataRow;
-                    for (j = 0; j < data.length; j++) {
-                        var brand_id=data[j].id;
-
-                        dataRow += "<tr>" +
-                            "<td>" + (j + 1) + "</td>" +
-                            // "<td>" + brand_id+ "</td>" +
-                            "<td>" + data[j].name + "</td>" +
-                            /*"<td>" + data[j].id + "</td>" +*/
-                            "<td class='project-actions text-right'>" +
-                            "<a class='btn btn-info btn-sm' href='{{ route("edit-model",brand_id) }}'> <i class='fas fa-pencil-alt'> </i> Edit </a>" +
-                            "</td>" +
-                            "<td>" +
-                            "<form action='' method='post'><button type='submit' class='btn btn-danger btn-sm' ><i class='fas fa-trash'></i>Delete</button></form>" +
-                            "</td>" +
-                            "</tr>"
-                    }
-                    $('#brand_data').html(dataRow);
-                }
-            });
-        } else {
-        }
-    });
-</script>--}}
 
 <script type="text/javascript">
     $('#bikeBrand').change(function () {
@@ -100,6 +61,31 @@
             });
         } else {
             $('#bikeModel').empty();
+        }
+    });
+    $('#carBrand').change(function () {
+        var brandID = $(this).val();
+        console.log(brandID);
+        if (brandID) {
+            $.ajax({
+                type: 'GET',
+                url: '{{url('getModel')}}?brand_id=' + brandID,
+                success: function (res) {
+                    console.log(res)
+                    if (res) {
+                        $('#carModel').empty();
+                        $('#carModel').append('<option>Select Model</option>');
+                        $.each(res, function (key, value) {
+                            $('#carModel').append('<option value="' + key + '">' + value + '</option>');
+                        });
+                    } else {
+                        $('#carModel').empty();
+                    }
+                }
+
+            });
+        } else {
+            $('#carModel').empty();
         }
     });
 </script>

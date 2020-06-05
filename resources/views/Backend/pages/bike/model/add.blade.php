@@ -41,16 +41,26 @@
                         </div>
                         <div class="card-body">
                             <div>
-                                <select name="bikeBrand" id="addModelBrand" class="form-control">
+                                <select name="bikeBrand" id="addModelBrand" class="form-control @error('bikeBrand') is-invalid @enderror">
                                     <option value="" selected="true" disabled>Select Brand</option>
                                     @foreach($brands as  $key => $value)
                                         <option value="{{ $key }}">{{$value}}</option>
                                     @endforeach
                                 </select>
+                                @error('bikeBrand')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="inputName">Model Name</label>
-                                <input type="text" name="name" id="inputName" class="form-control" placeholder="Name">
+                                <input type="text" name="name" id="inputName" class="form-control @error('name') is-invalid @enderror" placeholder="Name">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                         </div>
                         <!-- /.card-body -->
